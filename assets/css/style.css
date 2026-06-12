@@ -262,29 +262,27 @@ body {
 
 /* Children container — vertical guide line */
 .nav-children {
-  padding-left: 9px;
-  margin-left: 4px;
+  padding-left: 13px;
+  margin-left: 8px;
   border-left: 1px solid var(--border);
   padding-bottom: 4px;
   padding-top: 2px;
 }
 
-/* Individual nav item (L-arm connector) */
+/* Individual nav item */
 .nav-item {
   display: block;
-  padding: 4px 8px 4px 16px;
-  margin-left: -1px;
-  border-left: 1px solid var(--border);
-  border-radius: 0 4px 4px 0;
+  padding: 3px 8px 3px 8px;
+  margin: 1px 0;
+  border-radius: 4px;
+  border-left: 3px solid transparent;
   color: var(--text-secondary);
   font-size: 13px;
   text-decoration: none;
-  position: relative;
 }
 
 .nav-item:hover {
   color: var(--text-primary);
-  border-left-color: var(--text-secondary);
 }
 
 .nav-item.active {
