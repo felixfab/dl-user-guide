@@ -260,20 +260,30 @@ body {
 
 .nav-parent-link:hover { color: var(--accent); }
 
-/* Children container — vertical guide line */
+/* Children container — vertical guide line via pseudo-element */
 .nav-children {
   padding-left: 14px;
   margin-left: 8px;
-  border-left: 1px solid var(--border);
   padding-bottom: 4px;
   padding-top: 2px;
+  position: relative;
+}
+
+.nav-children::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--border);
 }
 
 /* Individual nav item — horizontal connector from vertical guide line */
 .nav-item {
   display: block;
-  padding: 3px 8px 3px 0;
-  margin: 1px 0 1px -1px;
+  padding: 3px 8px 3px 12px;
+  margin: 1px 0;
   border-left: 1px solid var(--border);
   border-radius: 0 4px 4px 0;
   color: var(--text-secondary);
