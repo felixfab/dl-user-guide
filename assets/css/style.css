@@ -186,6 +186,19 @@ body {
 /* Nav section (collapsible parent) */
 .nav-section {
   margin-bottom: 2px;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-section > summary {
+  list-style: none;
+}
+
+.nav-section > summary::marker,
+.nav-section > summary::-webkit-details-marker,
+.nav-section::-webkit-details-marker {
+  display: none;
+  content: none;
 }
 
 .nav-section[open] > summary { margin-bottom: 0; }
@@ -205,8 +218,6 @@ body {
   position: relative;
 }
 
-.nav-parent::-webkit-details-marker { display: none; }
-
 .nav-parent:hover { color: var(--accent); }
 
 /* Collapse chevron */
@@ -214,11 +225,11 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 14px;
-  height: 14px;
+  width: 18px;
+  height: 18px;
   flex-shrink: 0;
-  margin-right: 2px;
-  font-size: 16px;
+  margin-right: 0;
+  font-size: 20px;
   line-height: 1;
   color: var(--text-secondary);
   transition: transform 150ms ease;
