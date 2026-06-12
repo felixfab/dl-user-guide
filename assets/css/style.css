@@ -209,30 +209,24 @@ body {
 
 .nav-parent:hover { color: var(--accent); }
 
-/* Collapse chevron arrow */
+/* Collapse chevron */
 .collapse-arrow {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 18px;
-  height: 18px;
+  width: 14px;
+  height: 14px;
   flex-shrink: 0;
   margin-right: 2px;
-}
-
-.collapse-arrow::before {
-  content: '';
-  display: block;
-  width: 0;
-  height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 6px solid var(--text-secondary);
+  font-size: 16px;
+  line-height: 1;
+  color: var(--text-secondary);
   transition: transform 150ms ease;
 }
 
-.nav-section[open] > .nav-parent .collapse-arrow::before {
+.nav-section[open] > .nav-parent .collapse-arrow {
   transform: rotate(90deg);
+  color: var(--text-primary);
 }
 
 /* Leaf section (no children, not a <details>) */
