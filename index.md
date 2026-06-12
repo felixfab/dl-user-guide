@@ -1,3 +1,7 @@
+---
+layout: default
+title: Agent Configurator — DL User Guide
+---
 # Agent Configurator - User Guide
 
 ## Table of Contents
