@@ -262,20 +262,20 @@ body {
 
 /* Children container — vertical guide line */
 .nav-children {
-  padding-left: 13px;
+  padding-left: 14px;
   margin-left: 8px;
   border-left: 1px solid var(--border);
   padding-bottom: 4px;
   padding-top: 2px;
 }
 
-/* Individual nav item */
+/* Individual nav item — horizontal connector from vertical guide line */
 .nav-item {
   display: block;
-  padding: 3px 8px 3px 8px;
-  margin: 1px 0;
-  border-radius: 4px;
-  border-left: 3px solid transparent;
+  padding: 3px 8px 3px 0;
+  margin: 1px 0 1px -1px;
+  border-left: 1px solid var(--border);
+  border-radius: 0 4px 4px 0;
   color: var(--text-secondary);
   font-size: 13px;
   text-decoration: none;
@@ -283,6 +283,7 @@ body {
 
 .nav-item:hover {
   color: var(--text-primary);
+  border-left-color: var(--text-secondary);
 }
 
 .nav-item.active {
