@@ -46,15 +46,26 @@ The side panel slides in from the right side of the Gemini chat page. To open it
 
 | Icon | Action | Description |
 |------|--------|-------------|
-| 🟢/🟡/🔴 | Health dot | Green = all good. Yellow = degraded. Red = Gemini UI changed — extension updating. |
-| ▦ | Timeline | Opens the anchor timeline overlay with usage heatmap |
-| 🔒 | Lock | Pins the panel open — won't close when you click away |
-| ☑ | Bulk select | Enters bulk mode — checkboxes appear on all items |
-| ✕ | Close | Closes the panel |
+| <span class="ca-guide-dot ca-guide-dot--green"></span><span class="ca-guide-dot ca-guide-dot--yellow"></span><span class="ca-guide-dot ca-guide-dot--red"></span> | Health dot | Green = all good. Yellow = degraded. Red = Gemini UI changed — extension updating. |
+| <svg class="ca-guide-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg> | Timeline | Opens the anchor timeline overlay with usage heatmap |
+| <svg class="ca-guide-icon" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg> | Lock | Pins the panel open — won't close when you click away |
+| <svg class="ca-guide-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 12l2 2 4-4"/></svg> | Bulk select | Enters bulk mode — checkboxes appear on all items |
+| <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg> | Close | Closes the panel |
 
 ### Tabs
 
 The panel has three tabs: **Anchors** (your saved snippets), **Templates** (reusable blueprints), and **Bundles** (anchor groups).
+
+> <div class="ca-guide-icon-block">
+> <span class="ca-guide-icon-block-item"><span class="ca-guide-dot ca-guide-dot--green"></span><span class="ca-guide-dot ca-guide-dot--yellow"></span><span class="ca-guide-dot ca-guide-dot--red"></span><span>Health</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><span>Timeline</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg><span>Lock</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 12l2 2 4-4"/></svg><span>Bulk</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg><span>Close</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg><span>Anchors</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg><span>Templates</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg><span>Bundles</span></span>
+> </div>
 
 ---
 
@@ -110,7 +121,7 @@ Each anchor card shows:
 | **Description** | Optional label, bold at the top of the card |
 | **Text preview** | First few lines of the anchor text — click to expand |
 | **Turns pill** | N/M — turns remaining / total. Orange when <=3 remaining. Red when expired. |
-| **TTL pill** | ⧗ Xh — time remaining before idle expiry |
+| **TTL pill** | <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M6 2h12M6 22h12M6 6l6 6 6-6M6 18l6-6 6 6"/></svg> Xh — time remaining before idle expiry |
 | **Tags** | #tagname chips — click a chip to remove the tag |
 | **Usage** | "X uses" count |
 | **Toggle switch** | Right side — green = active, grey = inactive. Click to flip. |
@@ -119,11 +130,11 @@ Each anchor card shows:
 
 | Button | Action |
 |--------|--------|
-| 📋 **Copy** | Copies anchor text to clipboard |
-| ➡️ **Inject** | Injects anchor text directly into the Gemini prompt at cursor |
-| ⬇️ **Export** | Downloads anchor as a `.json` file |
-| ✏️ **Edit** | Opens the full editor overlay (see Section 7) |
-| 🗑 **Delete** | Moves anchor to Trash (soft-delete — recoverable) |
+| <svg class="ca-guide-icon" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> **Copy** | Copies anchor text to clipboard |
+| <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M5 12h13M12 5l7 7-7 7"/></svg> **Inject** | Injects anchor text directly into the Gemini prompt at cursor |
+| <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> **Export** | Downloads anchor as a `.json` file |
+| <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> **Edit** | Opens the full editor overlay (see Section 7) |
+| <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg> **Delete** | Moves anchor to Trash (soft-delete — recoverable) |
 
 ### Search, Sort &amp; Filter {#search-sort-filter}
 
@@ -135,7 +146,7 @@ Above the anchor list:
 
 ### Bulk Mode
 
-Click the **☑** button in the header to enter bulk mode. Checkboxes appear on all anchors. A bulk action bar appears with:
+Click the **<svg class="ca-guide-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 12l2 2 4-4"/></svg>** button in the header to enter bulk mode. Checkboxes appear on all anchors. A bulk action bar appears with:
 
 | Action | What it does |
 |--------|-------------|
@@ -175,6 +186,19 @@ Deleting an anchor (via Delete button or bulk delete) moves it to Trash — not 
 
 Items in Trash for more than 7 days are automatically purged.
 
+> <div class="ca-guide-icon-block">
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg><span>Copy</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M5 12h13M12 5l7 7-7 7"/></svg><span>Inject</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span>Export</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg><span>Edit</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg><span>Delete</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><rect x="1" y="5" width="22" height="14" rx="7"/><circle cx="8" cy="12" r="4"/></svg><span>Toggle</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M6 2h12M6 22h12M6 6l6 6 6-6M6 18l6-6 6 6"/></svg><span>TTL</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg><span>Global</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 12l2 2 4-4"/></svg><span>Bulk</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 5 17 10"/><line x1="12" y1="5" x2="12" y2="15"/></svg><span>Import</span></span>
+> </div>
+
 ---
 
 ## 5. Templates
@@ -194,11 +218,11 @@ Templates are reusable anchor blueprints. When you **activate** a template, a ne
 | Button | Action |
 |--------|--------|
 | **Activate** | Creates a new anchor from the template text (10 turns, local). Usage count increments. |
-| ✏️ **Edit** | Opens the template editor |
-| 📋 **Copy** | Copies template text to clipboard |
-| ➡️ **Inject** | Injects template text into the prompt |
-| ⬇️ **Export** | Downloads template as `.json` |
-| 🗑 **Delete** | Soft-deletes (recoverable via Trash) |
+| <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> **Edit** | Opens the template editor |
+| <svg class="ca-guide-icon" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> **Copy** | Copies template text to clipboard |
+| <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M5 12h13M12 5l7 7-7 7"/></svg> **Inject** | Injects template text into the prompt |
+| <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> **Export** | Downloads template as `.json` |
+| <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg> **Delete** | Soft-deletes (recoverable via Trash) |
 
 ### Template Description
 
@@ -214,6 +238,17 @@ Templates support an optional description field. It appears below the template n
 
 - Search filters by name, text, or tags. **Escape** to clear.
 - Sort by **Newest** or **Most Used**
+
+> <div class="ca-guide-icon-block">
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg><span>Copy</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M5 12h13M12 5l7 7-7 7"/></svg><span>Inject</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span>Export</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg><span>Edit</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg><span>Delete</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg><span>New</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M6 2h12M6 22h12M6 6l6 6 6-6M6 18l6-6 6 6"/></svg><span>TTL</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg><span>Global</span></span>
+> </div>
 
 ---
 
@@ -247,10 +282,10 @@ The **trigger keyword** is applied to all member anchors — they'll all use the
 | Button | Action |
 |--------|--------|
 | **Activate / Active** | Right-side button — green when active. Activates this bundle (deactivates others). |
-| ✏️ **Edit** | Opens the bundle creator in edit mode |
-| ⬇️ **Export** | Downloads bundle metadata + all member anchors as `.json` |
-| 🗑 **Delete** | Soft-deletes (moves to Trash, deactivates member anchors) |
-| ➡️ **Inject All** | Injects all member anchor texts joined by double newlines |
+| <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> **Edit** | Opens the bundle creator in edit mode |
+| <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> **Export** | Downloads bundle metadata + all member anchors as `.json` |
+| <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg> **Delete** | Soft-deletes (moves to Trash, deactivates member anchors) |
+| <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M5 12h13M12 5l7 7-7 7"/></svg> **Inject All** | Injects all member anchor texts joined by double newlines |
 
 ### Bundle Badge
 
@@ -270,6 +305,15 @@ Click **Deactivate All** in the bundle footer to deactivate all bundles and clea
 - Search filters by name, description, or keyword. **Escape** to clear.
 - Sort by **Newest** or **Most Used**
 
+> <div class="ca-guide-icon-block">
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span>Export</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg><span>Edit</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg><span>Delete</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M5 12h13M12 5l7 7-7 7"/><path d="M2 9l3-3M2 15l3 3"/></svg><span>Inject All</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg><span>Bundles</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg><span>New</span></span>
+> </div>
+
 ---
 
 ## 7. The Editor
@@ -279,9 +323,9 @@ Clicking **Edit** on any anchor or template opens the full-screen editor overlay
 ### Anchor Editor Layout
 
 ```
-┌─ Edit Anchor ─────────────────────────── [✕] ─┐
+┌─ Edit Anchor ─────────────────────────── [<svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>] ─┐
 │                                                │
-│  Anchor: [Switch Anchor... ▾]                   │
+│  Anchor: [Switch Anchor... <svg class="ca-guide-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>]                   │
 │  [Description input]                             │
 │  [Textarea — full anchor text]                   │
 │                                                │
@@ -330,11 +374,20 @@ TTL automatically deactivates an anchor if you haven't used it for a set number 
 
 **Note:** After removing TTL, the **+1h/+6h/+24h** buttons set a fresh TTL from the current time — they're never dead.
 
+> <div class="ca-guide-icon-block">
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg><span>Close</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg><span>Copy</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M5 12h13M12 5l7 7-7 7"/></svg><span>Inject</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg><span>Edit</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg><span>Delete</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M6 2h12M6 22h12M6 6l6 6 6-6M6 18l6-6 6 6"/></svg><span>TTL</span></span>
+> </div>
+
 ---
 
 ## 8. The Timeline
 
-The timeline overlay provides a visual history of your anchor usage. Open it via the ▦ button in the panel header or press **Alt+T**.
+The timeline overlay provides a visual history of your anchor usage. Open it via the <svg class="ca-guide-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg> button in the panel header or press **Alt+T**.
 
 ### Heatmap
 
@@ -362,6 +415,14 @@ Click any card to open the anchor editor.
 ### Timeline Bulk Mode
 
 Enable bulk mode in the timeline header to select multiple anchors and **Toggle**, **+5**, or **Delete** them from the bulk bar.
+
+> <div class="ca-guide-icon-block">
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><span>Timeline</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg><span>Copy</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M5 12h13M12 5l7 7-7 7"/></svg><span>Inject</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg><span>Close</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 12l2 2 4-4"/></svg><span>Bulk</span></span>
+> </div>
 
 ---
 
@@ -435,7 +496,7 @@ Each tab has an **Export All** button in its footer:
 
 ### Per-Item Export
 
-Every anchor, template, and bundle card has an **Export** button (⬇️) for single-item export. In bulk mode, use the **Export** button in the bulk bar to export only selected items.
+Every anchor, template, and bundle card has an **Export** button (<svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>) for single-item export. In bulk mode, use the **Export** button in the bulk bar to export only selected items.
 
 ### Import
 
@@ -455,7 +516,7 @@ All deletes are **soft-deletes** — items move to Trash, not permanently delete
 
 ## 12. Keyboard Shortcuts
 
-> 💡 **Tip:** You don't need to memorize these. Press **?** at any time to see the full reference on your screen.
+> <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 006 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg> **Tip:** You don't need to memorize these. Press **?** at any time to see the full reference on your screen.
 
 ### Save and manage your notes
 
@@ -467,7 +528,7 @@ All deletes are **soft-deletes** — items move to Trash, not permanently delete
 
 ### Open and move around
 
-> 💡 **Shortcuts do not respond while you're typing in a text field.** This prevents them from interfering with your writing. Click a blank area of the page first, then try the shortcut again.
+> <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 006 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg> **Shortcuts do not respond while you're typing in a text field.** This prevents them from interfering with your writing. Click a blank area of the page first, then try the shortcut again.
 
 | To do this… | Press this | What to expect |
 |---|---|---|
@@ -518,7 +579,7 @@ The minimap has a grouped list of all your notes in the current chat.
 | **Enter** | Scrolls to that note's location on the page. |
 | **Escape** | Closes the list. |
 
-> 💡 Click the **lock icon** to keep the list open even when your mouse moves away. Click the **×** button to close it manually.
+> <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 006 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg> Click the **lock icon** to keep the list open even when your mouse moves away. Click the **×** button to close it manually.
 
 ### Add tags faster
 
@@ -551,7 +612,7 @@ These shortcuts work while an editor or a dialog window is open.
 | **Tab** | Moves forward through buttons and fields. |
 | **Shift + Tab** | Moves backward through buttons and fields. |
 
-> 💡 **Tip:** If you press Escape and nothing happens, a different dialog may be open underneath. Press Escape again or click outside the dialog.
+> <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 006 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg> **Tip:** If you press Escape and nothing happens, a different dialog may be open underneath. Press Escape again or click outside the dialog.
 
 ### Change your shortcuts
 
@@ -562,25 +623,25 @@ You can change four shortcuts to keys that feel more natural to you:
 
 1. Type `chrome://extensions/shortcuts` into your browser's address bar. Press **Enter**.
 2. Find **Contextual Anchor** in the list.
-3. Click the **pencil icon** (✏️) next to the shortcut you want to change.
+3. Click the **pencil icon** (<svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>) next to the shortcut you want to change.
 4. Press the new key combination you want to use.
 5. The change takes effect right away. No restart needed.
 
-> ⚠️ **The Everyday shortcuts (/, ?, Alt + 1–4, Alt + E, and Alt + M) cannot be changed.** They are fixed.
+> <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> **The Everyday shortcuts (/, ?, Alt + 1–4, Alt + E, and Alt + M) cannot be changed.** They are fixed.
 
 ---
 
 ## 13. Troubleshooting
 
-> 💡 **Start here:** Two things fix most problems. (1) Make sure you are on **gemini.google.com**. (2) **Reload** the page.
+> <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 006 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg> **Start here:** Two things fix most problems. (1) Make sure you are on **gemini.google.com**. (2) **Reload** the page.
 
 ### Quick health check
 
 | Dot color | What it means | What to do |
 |---|---|---|
-| 🟢 Green | Everything is working. | Nothing needed. |
-| 🟡 Yellow | Some features may be limited. | Gemini's layout probably changed slightly — most things still work. |
-| 🔴 Red | The extension cannot find the parts of Gemini it needs. | Reload the page. If it stays red, the extension will check for updates automatically. Wait about an hour, then reload again. |
+| <span class="ca-guide-dot ca-guide-dot--green"></span> Green | Everything is working. | Nothing needed. |
+| <span class="ca-guide-dot ca-guide-dot--yellow"></span> Yellow | Some features may be limited. | Gemini's layout probably changed slightly — most things still work. |
+| <span class="ca-guide-dot ca-guide-dot--red"></span> Red | The extension cannot find the parts of Gemini it needs. | Reload the page. If it stays red, the extension will check for updates automatically. Wait about an hour, then reload again. |
 
 ### Common problems
 
@@ -593,6 +654,97 @@ You can change four shortcuts to keys that feel more natural to you:
 | A window will not close | • Have you pressed **Escape** more than once? Escape closes the most recent window first. • Is the **minimap list pinned**? (A blue lock icon means it is pinned open) | Press Escape again to close the next layer. Click the lock icon or the **×** button to unpin the minimap list. |
 | Your note stopped appearing even though it has uses left | • Did its **time limit** (TTL) run out? • Did you accidentally **switch bundles**? | Open the note's editor to check the timer. Look at the Bundles tab to see which bundle is active. |
 
-> 💡 **Before you uninstall:** Export your data first. Click the **Export** button at the bottom of the Anchors tab to save everything as a `.json` file. You can import it back if you reinstall.
+> <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 006 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg> **Before you uninstall:** Export your data first. Click the **Export** button at the bottom of the Anchors tab to save everything as a `.json` file. You can import it back if you reinstall.
 
-> 💡 **Still stuck?** Open the browser's developer tools (**F12**), click the **Console** tab, and look for any line starting with `[CA]`. Those lines show what the extension is doing. If you need help, include those lines when you report the issue.
+> <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 006 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg> **Still stuck?** Open the browser's developer tools (**F12**), click the **Console** tab, and look for any line starting with `[CA]`. Those lines show what the extension is doing. If you need help, include those lines when you report the issue.
+
+
+---
+
+## 14. Icon Reference
+
+This table lists every icon used in the extension. Use it as a quick lookup when the guide mentions an icon by name.
+
+| Icon | Name | Description |
+|---|---|---|
+| <svg class="ca-guide-icon-lg" viewBox="0 0 24 24">
+<path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/>
+</svg> | **Anchor** | Represents saved anchors. Appears on the Anchors tab and the side panel trigger button. |
+| <svg class="ca-guide-icon-lg" viewBox="0 0 24 24">
+<path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+<polyline points="14 2 14 8 20 8"/>
+<line x1="16" y1="13" x2="8" y2="13"/>
+<line x1="16" y1="17" x2="8" y2="17"/>
+</svg> | **Template** | Represents reusable anchor blueprints. Appears on the Templates tab. |
+| <svg class="ca-guide-icon-lg" viewBox="0 0 24 24">
+<path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/>
+</svg> | **Bundle** | Represents anchor groups for exclusive activation. Appears on the Bundles tab. |
+| <svg class="ca-guide-icon-lg" viewBox="0 0 24 24">
+<path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/>
+</svg> | **Constraints** | Filter and constraint management. Appears on the Constraints tab. |
+| <svg class="ca-guide-icon-lg" viewBox="0 0 24 24">
+<rect x="3" y="3" width="7" height="7" rx="1"/>
+<rect x="14" y="3" width="7" height="7" rx="1"/>
+<rect x="3" y="14" width="7" height="7" rx="1"/>
+<rect x="14" y="14" width="7" height="7" rx="1"/>
+</svg> | **Timeline** | Opens the anchor timeline overlay with usage heatmap. |
+| <svg class="ca-guide-icon-lg" viewBox="0 0 24 24">
+<rect x="3" y="11" width="18" height="11" rx="2"/>
+<path d="M7 11V7a5 5 0 0110 0v4"/>
+</svg> | **Lock** | Pins the side panel open so it will not close when you click away. |
+| <svg class="ca-guide-icon-lg" viewBox="0 0 24 24">
+<rect x="3" y="3" width="18" height="18" rx="2"/>
+<path d="M9 12l2 2 4-4"/>
+</svg> | **Bulk Select** | Enters bulk mode. Checkboxes appear on all items for batch operations. |
+| <svg class="ca-guide-icon-lg" viewBox="0 0 24 24">
+<path d="M18 6L6 18M6 6l12 12"/>
+</svg> | **Close** | Closes the panel, editor, timeline, or any open overlay. |
+| <svg class="ca-guide-icon-lg" viewBox="0 0 24 24">
+<rect x="9" y="9" width="13" height="13" rx="2"/>
+<path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+</svg> | **Copy** | Copies anchor or template text to your clipboard. |
+| <svg class="ca-guide-icon-lg" viewBox="0 0 24 24">
+<path d="M5 12h13M12 5l7 7-7 7"/>
+</svg> | **Inject** | Inserts anchor text directly into the Gemini prompt at your cursor. |
+| <svg class="ca-guide-icon-lg" viewBox="0 0 24 24">
+<path d="M5 12h13M12 5l7 7-7 7"/>
+<path d="M2 9l3-3M2 15l3 3"/>
+</svg> | **Inject All** | Injects all member anchor texts from a bundle joined by double newlines. |
+| <svg class="ca-guide-icon-lg" viewBox="0 0 24 24">
+<path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/>
+<path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/>
+</svg> | **Edit** | Opens the full-screen editor overlay for anchors, templates, or bundles. |
+| <svg class="ca-guide-icon-lg" viewBox="0 0 24 24">
+<path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/>
+</svg> | **Delete** | Moves an item to Trash. Soft-delete, recoverable within 7 days. |
+| <svg class="ca-guide-icon-lg" viewBox="0 0 24 24">
+<path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+<polyline points="7 10 12 15 17 10"/>
+<line x1="12" y1="15" x2="12" y2="3"/>
+</svg> | **Export** | Downloads an anchor, template, or bundle as a .json file. |
+| <svg class="ca-guide-icon-lg" viewBox="0 0 24 24">
+<path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+<polyline points="7 10 12 5 17 10"/>
+<line x1="12" y1="5" x2="12" y2="15"/>
+</svg> | **Import** | Imports anchors, templates, or bundles from a .json file. |
+| <svg class="ca-guide-icon-lg" viewBox="0 0 24 24">
+<rect x="1" y="5" width="22" height="14" rx="7"/>
+<circle cx="8" cy="12" r="4"/>
+</svg> | **Toggle** | Switches an anchor on (green) or off (grey). Appears on anchor cards. |
+| <svg class="ca-guide-icon-lg" viewBox="0 0 24 24">
+<circle cx="12" cy="12" r="10"/>
+<line x1="12" y1="8" x2="12" y2="16"/>
+<line x1="8" y1="12" x2="16" y2="12"/>
+</svg> | **Add / New** | Creates a new template, bundle, or constraint. Appears in tab footers. |
+| <svg class="ca-guide-icon-lg" viewBox="0 0 24 24">
+<path d="M6 2h12M6 22h12M6 6l6 6 6-6M6 18l6-6 6 6"/>
+</svg> | **TTL** | Idle expiry timer. Auto-disables an anchor if unused for a set number of hours. |
+| <svg class="ca-guide-icon-lg" viewBox="0 0 24 24">
+<circle cx="12" cy="12" r="10"/>
+<line x1="2" y1="12" x2="22" y2="12"/>
+<path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+</svg> | **Global** | Makes an anchor visible on all pages, not just where it was created. |
+| <svg class="ca-guide-icon-lg" viewBox="0 0 24 24">
+<path d="M12 2L15 9l7 1-5 5.5L18 22l-6-3.5L6 22l1-6.5L2 10l7-1z"/>
+</svg> | **Pin** | Pins a constraint or keeps the minimap list open when your mouse moves away. |
+| <span class="ca-guide-dot ca-guide-dot--green"></span><span class="ca-guide-dot ca-guide-dot--yellow"></span><span class="ca-guide-dot ca-guide-dot--red"></span> | **Health** | Extension status indicator. Green = all good, yellow = degraded, red = Gemini UI changed. |

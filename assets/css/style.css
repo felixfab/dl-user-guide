@@ -499,6 +499,67 @@ body {
   font-size: 0.9em;
 }
 
+/* ---- Guide Icons ---- */
+.ca-guide-icon {
+  width: 16px;
+  height: 16px;
+  vertical-align: text-bottom;
+  color: var(--text-faint);
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.ca-guide-icon-lg {
+  width: 20px;
+  height: 20px;
+  vertical-align: text-bottom;
+  color: var(--text-faint);
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.ca-guide-icon-block {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  align-items: center;
+}
+
+.ca-guide-icon-block .ca-guide-icon + span,
+.ca-guide-icon-block .ca-guide-icon-lg + span {
+  margin-left: 4px;
+}
+
+.ca-guide-icon-block span {
+  font-size: 12px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.ca-guide-icon-block-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ca-guide-icon-table svg {
+  vertical-align: middle;
+}
+
+/* Health dot indicators */
+.ca-guide-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 2px;
+}
+.ca-guide-dot--green  { background: #4caf50; }
+.ca-guide-dot--yellow { background: #f9a825; }
+.ca-guide-dot--red    { background: #e53935; }
+
 /* ---- Responsive (< 768px) ---- */
 @media screen and (max-width: 768px) {
   .layout {
