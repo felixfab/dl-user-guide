@@ -54,7 +54,9 @@ The side panel slides in from the right side of the Gemini chat page. To open it
 
 ### Tabs
 
-The panel has three tabs: **Anchors** (your saved snippets), **Templates** (reusable blueprints), and **Bundles** (anchor groups).
+The panel has five tabs at the top: **Anchors** (your saved snippets), **Templates** (reusable blueprints), **Bundles** (anchor groups), **Constraints** (filters and keywords), and **Behaviors** (auto-injection rules). Use **Alt+1** through **Alt+5** to switch tabs from your keyboard.
+
+Below the tabs are the side panel's tool icons: Health dot shows extension status, Timeline opens usage history, Lock pins the panel open, Bulk enters multi-select mode, and Close dismisses the panel. You can also press the **minimize button** on the far left to collapse the panel into a narrow strip — it hides the anchor list and shows only the essential tools. Press it again to expand.
 
 > <div class="ca-guide-icon-block">
 > <span class="ca-guide-icon-block-item"><span class="ca-guide-dot ca-guide-dot--green"></span><span class="ca-guide-dot ca-guide-dot--yellow"></span><span class="ca-guide-dot ca-guide-dot--red"></span><span>Health</span></span>
@@ -65,6 +67,9 @@ The panel has three tabs: **Anchors** (your saved snippets), **Templates** (reus
 > <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg><span>Anchors</span></span>
 > <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg><span>Templates</span></span>
 > <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg><span>Bundles</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/></svg><span>Constraints</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M12 2L15 9l7 1-5 5.5L18 22l-6-3.5L6 22l1-6.5L2 10l7-1z"/></svg><span>Behavior</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 8v8M8 12h8"/></svg><span>Minimize</span></span>
 > </div>
 
 <img src="assets/screenshots/section-3-side-panel.png" alt="Side Panel — full panel with header controls, tabs, and anchor list" style="max-width: 780px" loading="lazy">
@@ -99,7 +104,7 @@ There are four ways to create an anchor:
 **D. Bulk import**
 
 1. Click **Import** in the anchors tab footer
-2. Select a `.json` file (see Section 11 for format)
+2. Select a `.json` file (see Section 13 for format)
 
 ### The Turn Popup
 
@@ -137,7 +142,7 @@ Each anchor card shows:
 | <svg class="ca-guide-icon" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> **Copy** | Copies anchor text to clipboard |
 | <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M5 12h13M12 5l7 7-7 7"/></svg> **Inject** | Injects anchor text directly into the Gemini prompt at cursor |
 | <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> **Export** | Downloads anchor as a `.json` file |
-| <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> **Edit** | Opens the full editor overlay (see Section 7) |
+| <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> **Edit** | Opens the full editor overlay (see Section 8) |
 | <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg> **Delete** | Moves anchor to Trash (soft-delete — recoverable) |
 
 ### Search, Sort &amp; Filter {#search-sort-filter}
@@ -324,7 +329,56 @@ Click **Deactivate All** in the bundle footer to deactivate all bundles and clea
 
 ---
 
-## 7. The Editor
+## 7. Constraints {#constraints}
+
+Constraints let you filter and manage how your anchors behave. Switch to the **Constraints** tab (**Alt+4**) to create, edit, and organize constraints. A constraint is a filter rule — it can be a keyword that blocks certain anchors from injecting, or a tag-based rule that controls when anchors activate.
+
+### Creating a Constraint
+
+1. Switch to the **Constraints** tab
+2. Click **+ New Constraint** in the footer
+3. Enter a name and choose a type:
+   - **Keyword** — Anchors containing this word won't inject
+   - **Tag** — Anchors with this tag follow a specific behavior
+4. Set the constraint to **Active** or **Inactive**
+5. Click **Save**
+
+### Managing Constraints
+
+Each constraint card shows its name, type (keyword or tag), and active status. Use the **Toggle** button to enable or disable a constraint without deleting it.
+
+| Button | Action |
+|--------|--------|
+| <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> **Edit** | Opens the constraint editor |
+| <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg> **Delete** | Removes the constraint |
+| <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> **Export** | Downloads constraint as `.json` |
+| <svg class="ca-guide-icon" viewBox="0 0 24 24"><rect x="1" y="5" width="22" height="14" rx="7"/><circle cx="8" cy="12" r="4"/></svg> **Toggle** | Enables or disables the constraint |
+
+### Bulk Operations {#bulk-constraint-operations}
+
+Enter bulk mode in the Constraints tab to select multiple constraints and **Toggle Active**, **Export**, **Restore**, or **Delete** them from the bulk action bar. Use **Export All** in the footer to save all constraints at once, or **Import** to load constraints from a `.json` file.
+
+### How Constraints Affect Your Anchors
+
+When a constraint is active, it works alongside other settings:
+
+- **Keyword constraints** stop anchors containing the keyword from injecting — useful for filtering out sensitive or irrelevant text
+- **Tag constraints** apply special rules to all anchors with a matching tag
+- Constraints work with bundles and trigger keywords — all rules are combined
+- The status bar in the side panel shows how many constraints are currently active
+
+> <div class="ca-guide-icon-block">
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg><span>Edit</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg><span>Delete</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span>Export</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><rect x="1" y="5" width="22" height="14" rx="7"/><circle cx="8" cy="12" r="4"/></svg><span>Toggle</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg><span>New</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 5 17 10"/><line x1="12" y1="5" x2="12" y2="15"/></svg><span>Import</span></span>
+> </div>
+
+---
+
+## 8. The Editor
 
 Clicking **Edit** on any anchor or template opens the full-screen editor overlay.
 
@@ -395,7 +449,7 @@ TTL automatically deactivates an anchor if you haven't used it for a set number 
 
 ---
 
-## 8. The Timeline
+## 9. The Timeline
 
 The timeline overlay provides a visual history of your anchor usage. Open it via the <svg class="ca-guide-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg> button in the panel header or press **Alt+T**.
 
@@ -438,7 +492,7 @@ Enable bulk mode in the timeline header to select multiple anchors and **Toggle*
 
 ---
 
-## 9. Injection &amp; Automation {#injection-automation}
+## 10. Injection &amp; Automation {#injection-automation}
 
 ### How Auto-Injection Works
 
@@ -483,7 +537,7 @@ An anchor with **no** trigger keywords (empty list) always injects when active. 
 
 ---
 
-## 10. Slash Commands
+## 11. Slash Commands
 
 While typing in the Gemini prompt, you can use slash commands to search and inject anchors without leaving the keyboard:
 
@@ -498,7 +552,43 @@ Type `/a` or `/p` followed by a space, then a few characters of the anchor text 
 
 ---
 
-## 11. Data Management
+## 12. The Minimap {#the-minimap}
+
+The minimap is a thin vertical bar on the right edge of the page that gives you a visual overview of the chat. It shows colored bars for each section of the conversation — user messages appear in one color, model responses in another. Code blocks get a distinct style so you can spot them at a glance.
+
+### What the minimap shows you
+
+- **Conversation structure** — Each bar represents a chunk of the chat. Hover over any bar to see a floating preview of that section's text
+- **Your saved anchors** — Bars that have anchors attached glow with a highlight. Click the bar to jump to that anchor
+- **Anchor count badge** — Click the **#** button on the minimap to see a complete list of all your anchors in the current chat, grouped by message
+- **Navigating by anchor** — In the anchor list, use **↓** and **↑** to move through items, and **Enter** to scroll the page to that anchor's location
+
+### Showing and hiding the minimap {#showing-and-hiding-the-minimap}
+
+Press **Alt+M** to show or hide the minimap at any time — this works even while you're typing. You can also change this shortcut at `chrome://extensions/shortcuts`.
+
+### The anchor list {#the-anchor-list-popup}
+
+The anchor popup appears when you click the **#** button on the minimap:
+
+| Key | What it does |
+|---|---|
+| **↓** or **↑** | Move through the list |
+| **Enter** | Scroll to the highlighted note |
+| **Escape** | Close the list |
+
+Click the **lock icon** to keep the list open when your mouse moves away. Click the **×** button to close it manually.
+
+> <div class="ca-guide-icon-block">
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 12l2 2 4-4"/></svg><span>Anchor List</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg><span>Lock List</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg><span>Close List</span></span>
+> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 8v8M8 12h8"/></svg><span>Toggle Minimap</span></span>
+> </div>
+
+---
+
+## 13. Data Management
 
 ### Export All
 
@@ -528,7 +618,7 @@ All deletes are **soft-deletes** — items move to Trash, not permanently delete
 
 ---
 
-## 12. Keyboard Shortcuts
+## 14. Keyboard Shortcuts
 
 <img src="assets/screenshots/section-12-keyboard-shortcuts.png" alt="Keyboard Shortcuts — the built-in ? key reference overlay" style="max-width: 780px" loading="lazy">
 
@@ -647,7 +737,7 @@ You can change four shortcuts to keys that feel more natural to you:
 
 ---
 
-## 13. Troubleshooting
+## 15. Troubleshooting
 
 > <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 006 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg> **Start here:** Two things fix most problems. (1) Make sure you are on **gemini.google.com**. (2) **Reload** the page.
 
@@ -677,7 +767,7 @@ You can change four shortcuts to keys that feel more natural to you:
 
 ---
 
-## 14. Icon Reference {#icon-reference}
+## 16. Icon Reference {#icon-reference}
 
 This table lists every icon used in the extension. Use it as a quick lookup when the guide mentions an icon by name.
 

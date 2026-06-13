@@ -565,6 +565,26 @@ svg.ca-guide-icon, svg.ca-guide-icon-lg,
   stroke-linejoin: round;
 }
 
+/* Align guide icons and dots inside prose tables */
+.prose table .ca-guide-icon,
+.prose table .ca-guide-icon-lg,
+.prose table .ca-guide-dot {
+  vertical-align: middle;
+}
+
+/* Screenshot placeholder styling */
+.prose img[src*="screenshots"] {
+  display: block;
+  width: 100%;
+  max-width: 780px;
+  min-height: 120px;
+  margin: 20px 0;
+  border: 2px dashed var(--border-color, #d0d0d0);
+  border-radius: 8px;
+  background: var(--bg-secondary, #f8f8f8);
+  object-fit: contain;
+}
+
 /* Health dot indicators */
 .ca-guide-dot {
   display: inline-block;
