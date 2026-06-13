@@ -380,32 +380,9 @@ When a constraint is active, it works alongside other settings:
 
 ## 8. The Editor
 
-Clicking **Edit** on any anchor or template opens the full-screen editor overlay.
+Clicking **Edit** on any anchor or template opens the full-screen editor overlay. The layout has a text area on the left and a sidebar on the right with controls for tags, trigger keywords, turns, status, scope, TTL, usage stats, source URL, and metadata. A footer row holds the action buttons.
 
-### Anchor Editor Layout
-
-```
-┌─ Edit Anchor ─────────────────────────── [<svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>] ─┐
-│                                                │
-│  Anchor: [Switch Anchor... <svg class="ca-guide-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>]                   │
-│  [Description input]                             │
-│  [Textarea — full anchor text]                   │
-│                                                │
-│  Sidebar:                                       │
-│    Tags                                         │
-│    Trigger Keywords                             │
-│    Turns (display + extend + reset)             │
-│    Status & Scope (active/inactive, global/local)│
-│    TTL (display + extend + reset + remove)      │
-│    Usage stats                                   │
-│    Source URL                                    │
-│    Meta (created date)                           │
-│                                                │
-│  Footer: [Delete] [Copy] [Inject] [Cancel] [Save]│
-└────────────────────────────────────────────────┘
-```
-
-<img src="assets/screenshots/section-7-editor-overlay.png" alt="Editor Overlay — full-screen editor with textarea and sidebar controls" style="max-width: 780px" loading="lazy">
+<img src="assets/screenshots/section-8-editor-overlay.png" alt="Editor Overlay — full-screen editor with textarea and sidebar controls" style="max-width: 780px" loading="lazy">
 
 ### Anchor Switcher
 
