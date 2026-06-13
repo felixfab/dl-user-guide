@@ -122,7 +122,7 @@ body {
   scrollbar-color: var(--border) transparent;
 }
 
-.sidebar::-webkit-scrollbar { width: 4px; }
+.sidebar::-webkit-scrollbar { width: 2px; }
 .sidebar::-webkit-scrollbar-track { background: transparent; }
 .sidebar::-webkit-scrollbar-thumb {
   background: var(--border);
@@ -378,6 +378,10 @@ body {
 .prose li {
   margin-bottom: 0.15em;
   list-style-position: outside;
+}
+
+.prose li::marker {
+  color: var(--text-faint);
 }
 
 .prose ul li { list-style-type: disc; }
