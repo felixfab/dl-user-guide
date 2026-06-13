@@ -118,14 +118,12 @@ body {
   display: flex;
   flex-direction: column;
   padding: 32px 0 0 0;
+  border-right: 1px solid var(--border);
   scrollbar-color: var(--border) transparent;
 }
 
 .sidebar::-webkit-scrollbar { width: 4px; }
-.sidebar::-webkit-scrollbar-track {
-  background: transparent;
-  border-left: 1px solid var(--border);
-}
+.sidebar::-webkit-scrollbar-track { background: transparent; }
 .sidebar::-webkit-scrollbar-thumb {
   background: var(--border);
   border-radius: 0;
@@ -238,19 +236,19 @@ body {
   width: 18px;
   height: 18px;
   flex-shrink: 0;
+  margin-right: 6px;
   color: var(--text-faint);
 }
 
 .collapse-arrow svg {
   width: 12px;
   height: 12px;
-  stroke-width: 2.5px;
+  stroke-width: 2px;
   transition: transform 100ms ease-in-out;
 }
 
 .nav-section[open] > .nav-parent .collapse-arrow svg {
   transform: rotate(90deg);
-  color: var(--text-secondary);
 }
 
 /* Leaf section (no children, not a <details>) */
@@ -509,6 +507,7 @@ body {
       height: auto;
       max-height: none;
       position: relative;
+      border-right: none;
       border-bottom: 1px solid var(--border);
     }
 
