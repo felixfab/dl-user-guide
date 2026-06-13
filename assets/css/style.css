@@ -1,72 +1,78 @@
 /* ==========================================================================
-   DL User Guide — Custom Stylesheet
-   CA/Gemini colors, Obsidian-style two-panel layout with tree-line sidebar
+   DL User Guide — Obsidian Help aesthetics
+   Matches https://obsidian.md/help/ typography, colors, sidebar nav
    ========================================================================== */
 
-/* ---- CSS Custom Properties (Light mode — default) ---- */
+/* ---- CSS Custom Properties (Light mode) ---- */
 :root,
 [data-theme="light"] {
   --bg: #ffffff;
-  --sidebar-bg: #f8f9fa;
-  --text-primary: #202124;
-  --text-secondary: #5f6368;
-  --accent: #1a73e8;
-  --accent-hover: #1967d2;
-  --border: #dadce0;
-  --code-bg: #f1f3f4;
-  --code-text: #202124;
-  --surface: #f1f3f4;
-  --shadow: 0 1px 3px rgba(0,0,0,0.08);
-  --hr-color: #dadce0;
-  --table-border: #dadce0;
-  --table-stripe: #f8f9fa;
-  --blockquote-border: #1a73e8;
-  --blockquote-bg: #f1f3f4;
-  --selection-bg: rgba(26,115,232,0.18);
+  --sidebar-bg: #ffffff;
+  --text-primary: #222222;
+  --text-secondary: #5c5c5c;
+  --text-faint: #ababab;
+  --accent: hsl(258, 88%, 66%);
+  --accent-hover: hsl(255, 90%, 76%);
+  --border: #e0e0e0;
+  --border-hover: #d4d4d4;
+  --code-bg: #f6f6f6;
+  --code-text: #222222;
+  --surface: #f6f6f6;
+  --surface-hover: #fafafa;
+  --hr-color: #e0e0e0;
+  --table-border: #e0e0e0;
+  --table-stripe: #fafafa;
+  --blockquote-border: hsl(258, 88%, 66%);
+  --blockquote-bg: transparent;
+  --selection-bg: hsla(258, 88%, 66%, 0.2);
 }
 
 /* ---- Dark mode ---- */
 [data-theme="dark"] {
-  --bg: #202124;
-  --sidebar-bg: #292a2d;
-  --text-primary: #e8eaed;
-  --text-secondary: #9aa0a6;
-  --accent: #4285f4;
-  --accent-hover: #8ab4f8;
-  --border: #5f6368;
-  --code-bg: #2d2d2d;
-  --code-text: #e8eaed;
-  --surface: #2d2d2d;
-  --shadow: 0 1px 3px rgba(0,0,0,0.3);
-  --hr-color: #5f6368;
-  --table-border: #5f6368;
-  --table-stripe: #2d2d2d;
-  --blockquote-border: #4285f4;
-  --blockquote-bg: #2d2d2d;
-  --selection-bg: rgba(66,133,244,0.25);
+  --bg: #1e1e1e;
+  --sidebar-bg: #1e1e1e;
+  --text-primary: #dadada;
+  --text-secondary: #b3b3b3;
+  --text-faint: #666666;
+  --accent: hsl(255, 90%, 76%);
+  --accent-hover: hsl(255, 93%, 82%);
+  --border: #363636;
+  --border-hover: #3f3f3f;
+  --code-bg: #262626;
+  --code-text: #dadada;
+  --surface: #262626;
+  --surface-hover: #2a2a2a;
+  --hr-color: #363636;
+  --table-border: #363636;
+  --table-stripe: #242424;
+  --blockquote-border: hsl(255, 90%, 76%);
+  --blockquote-bg: transparent;
+  --selection-bg: hsla(255, 90%, 76%, 0.25);
 }
 
 /* ---- System preference dark mode ---- */
 @media (prefers-color-scheme: dark) {
   [data-theme="system"],
   :root:not([data-theme]) {
-    --bg: #202124;
-    --sidebar-bg: #292a2d;
-    --text-primary: #e8eaed;
-    --text-secondary: #9aa0a6;
-    --accent: #4285f4;
-    --accent-hover: #8ab4f8;
-    --border: #5f6368;
-    --code-bg: #2d2d2d;
-    --code-text: #e8eaed;
-    --surface: #2d2d2d;
-    --shadow: 0 1px 3px rgba(0,0,0,0.3);
-    --hr-color: #5f6368;
-    --table-border: #5f6368;
-    --table-stripe: #2d2d2d;
-    --blockquote-border: #4285f4;
-    --blockquote-bg: #2d2d2d;
-    --selection-bg: rgba(66,133,244,0.25);
+    --bg: #1e1e1e;
+    --sidebar-bg: #1e1e1e;
+    --text-primary: #dadada;
+    --text-secondary: #b3b3b3;
+    --text-faint: #666666;
+    --accent: hsl(255, 90%, 76%);
+    --accent-hover: hsl(255, 93%, 82%);
+    --border: #363636;
+    --border-hover: #3f3f3f;
+    --code-bg: #262626;
+    --code-text: #dadada;
+    --surface: #262626;
+    --surface-hover: #2a2a2a;
+    --hr-color: #363636;
+    --table-border: #363636;
+    --table-stripe: #242424;
+    --blockquote-border: hsl(255, 90%, 76%);
+    --blockquote-bg: transparent;
+    --selection-bg: hsla(255, 90%, 76%, 0.25);
   }
 }
 
@@ -82,10 +88,11 @@ html {
 }
 
 body {
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica", "Arial", "Segoe UI", "InterVariable", "Inter", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-size: 15px;
   background: var(--bg);
   color: var(--text-primary);
-  line-height: 1.6;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -108,10 +115,9 @@ body {
   top: 0;
   overflow-y: auto;
   background: var(--sidebar-bg);
-  border-right: 1px solid var(--border);
   display: flex;
   flex-direction: column;
-  padding: 0;
+  padding: 32px 0 0 0;
   scrollbar-width: thin;
 }
 
@@ -127,16 +133,16 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 24px 20px 16px;
+  padding: 0 32px 24px 18px;
   flex-shrink: 0;
 }
 
 .sidebar-title {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 600;
   color: var(--text-primary);
   text-decoration: none;
-  letter-spacing: -0.01em;
+  line-height: 1.2;
 }
 
 .sidebar-title:hover { color: var(--accent); }
@@ -146,12 +152,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
-  border: 1px solid var(--border);
-  border-radius: 6px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 4px;
   background: transparent;
-  color: var(--text-secondary);
+  color: var(--text-faint);
   cursor: pointer;
   padding: 0;
   flex-shrink: 0;
@@ -159,8 +165,7 @@ body {
 
 .theme-toggle:hover {
   background: var(--surface);
-  color: var(--text-primary);
-  border-color: var(--text-secondary);
+  color: var(--text-secondary);
 }
 
 .theme-icon { display: none; }
@@ -180,12 +185,12 @@ body {
 .sidebar-nav {
   flex: 1;
   overflow-y: auto;
-  padding: 0 20px 32px;
+  padding: 0 18px 32px 18px;
 }
 
 /* Nav section (collapsible parent) */
 .nav-section {
-  margin-bottom: 2px;
+  margin: 0;
   padding: 0;
   list-style: none;
 }
@@ -207,8 +212,10 @@ body {
 .nav-parent {
   display: flex;
   align-items: center;
-  padding: 6px 8px 6px 0;
-  border-radius: 4px;
+  padding: 5px 8px 5px 0;
+  margin-left: -8px;
+  margin-bottom: 2px;
+  border-radius: 3px;
   color: var(--text-primary);
   font-size: 14px;
   font-weight: 500;
@@ -218,9 +225,9 @@ body {
   position: relative;
 }
 
-.nav-parent:hover { color: var(--accent); }
+.nav-parent:hover { color: var(--text-primary); opacity: 0.85; }
 
-/* Collapse chevron */
+/* Collapse chevron — SVG triangle matching Obsidian */
 .collapse-arrow {
   display: inline-flex;
   align-items: center;
@@ -228,34 +235,40 @@ body {
   width: 18px;
   height: 18px;
   flex-shrink: 0;
-  margin-right: 0;
-  font-size: 20px;
-  line-height: 1;
-  color: var(--text-secondary);
-  transition: transform 150ms ease;
+  color: var(--text-faint);
 }
 
-.nav-section[open] > .nav-parent .collapse-arrow {
+.collapse-arrow svg {
+  width: 12px;
+  height: 12px;
+  stroke-width: 2.5px;
+  transition: transform 100ms ease-in-out;
+}
+
+.nav-section[open] > .nav-parent .collapse-arrow svg {
   transform: rotate(90deg);
-  color: var(--text-primary);
+  color: var(--text-secondary);
 }
 
 /* Leaf section (no children, not a <details>) */
 .nav-leaf {
   margin-bottom: 0;
-  padding: 6px 8px 6px 0;
+  padding: 0;
 }
 
 .nav-parent--leaf {
   display: block;
-  padding-left: 18px;
+  padding: 5px 8px 5px 0;
+  margin-left: -8px;
+  margin-bottom: 2px;
+  border-radius: 3px;
   color: var(--text-primary);
   font-size: 14px;
   font-weight: 500;
   text-decoration: none;
 }
 
-.nav-parent--leaf:hover { color: var(--accent); }
+.nav-parent--leaf:hover { color: var(--text-primary); opacity: 0.85; }
 
 .nav-parent-link {
   color: inherit;
@@ -263,42 +276,28 @@ body {
   flex: 1;
 }
 
-.nav-parent-link:hover { color: var(--accent); }
+.nav-parent-link:hover { color: inherit; }
 
-/* Children container — vertical guide line via pseudo-element */
+/* Children container */
 .nav-children {
-  padding-left: 14px;
-  margin-left: 8px;
-  padding-bottom: 4px;
-  padding-top: 2px;
-  position: relative;
+  padding: 2px 0 8px 6px;
 }
 
-.nav-children::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background: var(--border);
-}
-
-/* Individual nav item — horizontal connector from vertical guide line */
+/* Individual nav item */
 .nav-item {
   display: block;
-  padding: 3px 8px 3px 12px;
-  margin: 1px 0;
+  padding: 3px 8px 3px 16px;
+  margin-left: -1px;
   border-left: 1px solid var(--border);
-  border-radius: 0 4px 4px 0;
+  border-radius: 0;
   color: var(--text-secondary);
-  font-size: 13px;
+  font-size: 14px;
   text-decoration: none;
 }
 
 .nav-item:hover {
   color: var(--text-primary);
-  border-left-color: var(--text-secondary);
+  border-left-color: var(--border-hover);
 }
 
 .nav-item.active {
@@ -325,68 +324,72 @@ body {
 
 /* ---- Prose Typography ---- */
 .prose {
-  font-size: 1rem;
-  line-height: 1.75;
+  font-size: 16px;
+  line-height: 1.5;
   color: var(--text-primary);
 }
 
 .prose h1 {
-  font-size: 2.2em;
+  font-size: 1.618em;
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.015em;
   line-height: 1.2;
-  margin: 0 0 0.75em;
-  color: var(--text-primary);
-  padding-bottom: 0.3em;
-  border-bottom: 1px solid var(--border);
+  margin: 0 0 0.5em;
+  color: inherit;
+  padding-bottom: 0;
+  border-bottom: none;
 }
 
 .prose h2 {
-  font-size: 1.55em;
-  font-weight: 600;
+  font-size: 1.462em;
+  font-weight: 660;
   letter-spacing: -0.011em;
-  line-height: 1.3;
+  line-height: 1.2;
   margin: 2.5em 0 0.6em;
-  color: var(--text-primary);
+  color: inherit;
 }
 
 .prose h3 {
-  font-size: 1.25em;
-  font-weight: 600;
+  font-size: 1.318em;
+  font-weight: 660;
   letter-spacing: -0.008em;
-  line-height: 1.4;
+  line-height: 1.3;
   margin: 2em 0 0.5em;
-  color: var(--text-primary);
+  color: inherit;
 }
 
 .prose h4 {
-  font-size: 1.1em;
-  font-weight: 600;
+  font-size: 1.188em;
+  font-weight: 640;
+  letter-spacing: -0.005em;
+  line-height: 1.4;
   margin: 1.75em 0 0.4em;
-  color: var(--text-primary);
+  color: inherit;
 }
 
-.prose p { margin: 0 0 1.2em; }
+.prose p { margin: 0 0 1em; }
 
 .prose ul, .prose ol {
-  margin: 0 0 1.2em;
+  margin: 0 0 1em;
   padding-left: 1.5em;
 }
 
 .prose li {
-  margin-bottom: 0.3em;
+  margin-bottom: 0.15em;
   list-style-position: outside;
 }
 
 .prose ul li { list-style-type: disc; }
 .prose ol li { list-style-type: decimal; }
 
-.prose strong { font-weight: 600;
-  color: var(--text-primary); }
+.prose strong {
+  font-weight: 600;
+  color: var(--text-primary);
+}
 
 .prose a {
   color: var(--accent);
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .prose a:hover {
@@ -396,22 +399,22 @@ body {
 
 /* ---- Code ---- */
 .prose code {
-  font-family: ui-monospace, SFMono-Regular, 'Cascadia Mono', 'Roboto Mono', Menlo, Monaco, monospace;
-  font-size: 0.88em;
+  font-family: ui-monospace, SFMono-Regular, 'Cascadia Mono', 'Roboto Mono', 'DejaVu Sans Mono', 'Liberation Mono', Menlo, Monaco, 'Consolas', 'Source Code Pro', monospace;
+  font-size: 0.875em;
   padding: 0.15em 0.4em;
   border-radius: 4px;
   background: var(--code-bg);
   color: var(--code-text);
-  border: 1px solid var(--border);
+  border: none;
 }
 
 .prose pre {
   margin: 0 0 1.5em;
   padding: 16px 20px;
   overflow-x: auto;
-  border-radius: 8px;
+  border-radius: 4px;
   background: var(--code-bg);
-  border: 1px solid var(--border);
+  border: none;
   font-size: 0.875em;
   line-height: 1.55;
 }
@@ -426,12 +429,12 @@ body {
 
 /* ---- Blockquotes ---- */
 .prose blockquote {
-  margin: 0 0 1.2em;
-  padding: 12px 16px;
-  border-left: 3px solid var(--blockquote-border);
+  margin: 0 0 1em;
+  padding: 0 0 0 24px;
+  border-left: 2px solid var(--blockquote-border);
   background: var(--blockquote-bg);
-  border-radius: 0 6px 6px 0;
-  color: var(--text-secondary);
+  border-radius: 0;
+  color: inherit;
   font-style: normal;
 }
 
@@ -481,7 +484,7 @@ body {
 /* ---- Images ---- */
 .prose img {
   max-width: 100%;
-  border-radius: 6px;
+  border-radius: 4px;
 }
 
 /* ---- Footer note ---- */
@@ -497,15 +500,14 @@ body {
     flex-direction: column;
   }
 
-  .sidebar {
-    width: 100%;
-    min-width: 100%;
-    height: auto;
-    max-height: none;
-    position: relative;
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
+.sidebar {
+      width: 100%;
+      min-width: 100%;
+      height: auto;
+      max-height: none;
+      position: relative;
+      border-bottom: 1px solid var(--border);
+    }
 
   .sidebar-header {
     padding: 16px 20px 8px;
@@ -522,7 +524,7 @@ body {
     max-width: 100%;
   }
 
-  .prose h1 { font-size: 1.7em; }
-  .prose h2 { font-size: 1.35em; }
+  .prose h1 { font-size: 1.4em; }
+  .prose h2 { font-size: 1.25em; }
   .prose h3 { font-size: 1.15em; }
 }
