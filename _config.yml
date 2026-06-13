@@ -1,3 +1,4 @@
+baseurl: /guide
 title: CA User Guide
 description: Official documentation for Contextual Anchor — Chrome extension for Gemini chat context management
 defaults:
