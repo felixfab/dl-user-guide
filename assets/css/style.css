@@ -547,6 +547,24 @@ body {
   vertical-align: middle;
 }
 
+/* Force guide SVGs to inherit stroke/fill from color */
+svg.ca-guide-icon, svg.ca-guide-icon-lg,
+.ca-guide-icon svg, .ca-guide-icon-lg svg,
+.ca-guide-icon-block svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.ca-guide-icon-block-item svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 /* Health dot indicators */
 .ca-guide-dot {
   display: inline-block;
@@ -595,4 +613,43 @@ body {
   .prose h1 { font-size: 1.4em; }
   .prose h2 { font-size: 1.25em; }
   .prose h3 { font-size: 1.15em; }
+}
+
+/* ---- Icon Reference Grid ---- */
+.ca-icon-ref-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.ca-icon-ref-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--bg-secondary);
+}
+
+.ca-icon-ref-svg {
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+.ca-icon-ref-svg .ca-guide-dot {
+  margin-top: 4px;
+}
+
+.ca-icon-ref-info strong {
+  display: block;
+  font-size: 0.95em;
+  margin-bottom: 2px;
+}
+
+.ca-icon-ref-info span {
+  font-size: 0.82em;
+  color: var(--text-secondary);
+  line-height: 1.4;
 }

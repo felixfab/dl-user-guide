@@ -681,86 +681,111 @@ You can change four shortcuts to keys that feel more natural to you:
 
 This table lists every icon used in the extension. Use it as a quick lookup when the guide mentions an icon by name.
 
-| Icon | Name | Description |
-|---|---|---|
-| <svg class="ca-guide-icon-lg" viewBox="0 0 24 24">
-<path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/>
-</svg> | **Anchor** | Represents saved anchors. Appears on the Anchors tab and the side panel trigger button. |
-| <svg class="ca-guide-icon-lg" viewBox="0 0 24 24">
-<path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
-<polyline points="14 2 14 8 20 8"/>
-<line x1="16" y1="13" x2="8" y2="13"/>
-<line x1="16" y1="17" x2="8" y2="17"/>
-</svg> | **Template** | Represents reusable anchor blueprints. Appears on the Templates tab. |
-| <svg class="ca-guide-icon-lg" viewBox="0 0 24 24">
-<path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/>
-</svg> | **Bundle** | Represents anchor groups for exclusive activation. Appears on the Bundles tab. |
-| <svg class="ca-guide-icon-lg" viewBox="0 0 24 24">
-<path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/>
-</svg> | **Constraints** | Filter and constraint management. Appears on the Constraints tab. |
-| <svg class="ca-guide-icon-lg" viewBox="0 0 24 24">
-<rect x="3" y="3" width="7" height="7" rx="1"/>
-<rect x="14" y="3" width="7" height="7" rx="1"/>
-<rect x="3" y="14" width="7" height="7" rx="1"/>
-<rect x="14" y="14" width="7" height="7" rx="1"/>
-</svg> | **Timeline** | Opens the anchor timeline overlay with usage heatmap. |
-| <svg class="ca-guide-icon-lg" viewBox="0 0 24 24">
-<rect x="3" y="11" width="18" height="11" rx="2"/>
-<path d="M7 11V7a5 5 0 0110 0v4"/>
-</svg> | **Lock** | Pins the side panel open so it will not close when you click away. |
-| <svg class="ca-guide-icon-lg" viewBox="0 0 24 24">
-<rect x="3" y="3" width="18" height="18" rx="2"/>
-<path d="M9 12l2 2 4-4"/>
-</svg> | **Bulk Select** | Enters bulk mode. Checkboxes appear on all items for batch operations. |
-| <svg class="ca-guide-icon-lg" viewBox="0 0 24 24">
-<path d="M18 6L6 18M6 6l12 12"/>
-</svg> | **Close** | Closes the panel, editor, timeline, or any open overlay. |
-| <svg class="ca-guide-icon-lg" viewBox="0 0 24 24">
-<rect x="9" y="9" width="13" height="13" rx="2"/>
-<path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
-</svg> | **Copy** | Copies anchor or template text to your clipboard. |
-| <svg class="ca-guide-icon-lg" viewBox="0 0 24 24">
-<path d="M5 12h13M12 5l7 7-7 7"/>
-</svg> | **Inject** | Inserts anchor text directly into the Gemini prompt at your cursor. |
-| <svg class="ca-guide-icon-lg" viewBox="0 0 24 24">
-<path d="M5 12h13M12 5l7 7-7 7"/>
-<path d="M2 9l3-3M2 15l3 3"/>
-</svg> | **Inject All** | Injects all member anchor texts from a bundle joined by double newlines. |
-| <svg class="ca-guide-icon-lg" viewBox="0 0 24 24">
-<path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/>
-<path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/>
-</svg> | **Edit** | Opens the full-screen editor overlay for anchors, templates, or bundles. |
-| <svg class="ca-guide-icon-lg" viewBox="0 0 24 24">
-<path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/>
-</svg> | **Delete** | Moves an item to Trash. Soft-delete, recoverable within 7 days. |
-| <svg class="ca-guide-icon-lg" viewBox="0 0 24 24">
-<path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
-<polyline points="7 10 12 15 17 10"/>
-<line x1="12" y1="15" x2="12" y2="3"/>
-</svg> | **Export** | Downloads an anchor, template, or bundle as a .json file. |
-| <svg class="ca-guide-icon-lg" viewBox="0 0 24 24">
-<path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
-<polyline points="7 10 12 5 17 10"/>
-<line x1="12" y1="5" x2="12" y2="15"/>
-</svg> | **Import** | Imports anchors, templates, or bundles from a .json file. |
-| <svg class="ca-guide-icon-lg" viewBox="0 0 24 24">
-<rect x="1" y="5" width="22" height="14" rx="7"/>
-<circle cx="8" cy="12" r="4"/>
-</svg> | **Toggle** | Switches an anchor on (green) or off (grey). Appears on anchor cards. |
-| <svg class="ca-guide-icon-lg" viewBox="0 0 24 24">
-<circle cx="12" cy="12" r="10"/>
-<line x1="12" y1="8" x2="12" y2="16"/>
-<line x1="8" y1="12" x2="16" y2="12"/>
-</svg> | **Add / New** | Creates a new template, bundle, or constraint. Appears in tab footers. |
-| <svg class="ca-guide-icon-lg" viewBox="0 0 24 24">
-<path d="M6 2h12M6 22h12M6 6l6 6 6-6M6 18l6-6 6 6"/>
-</svg> | **TTL** | Idle expiry timer. Auto-disables an anchor if unused for a set number of hours. |
-| <svg class="ca-guide-icon-lg" viewBox="0 0 24 24">
-<circle cx="12" cy="12" r="10"/>
-<line x1="2" y1="12" x2="22" y2="12"/>
-<path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
-</svg> | **Global** | Makes an anchor visible on all pages, not just where it was created. |
-| <svg class="ca-guide-icon-lg" viewBox="0 0 24 24">
-<path d="M12 2L15 9l7 1-5 5.5L18 22l-6-3.5L6 22l1-6.5L2 10l7-1z"/>
-</svg> | **Pin** | Pins a constraint or keeps the minimap list open when your mouse moves away. |
-| <span class="ca-guide-dot ca-guide-dot--green"></span><span class="ca-guide-dot ca-guide-dot--yellow"></span><span class="ca-guide-dot ca-guide-dot--red"></span> | **Health** | Extension status indicator. Green = all good, yellow = degraded, red = Gemini UI changed. |
+<div class="ca-icon-ref-grid">
+
+<div class="ca-icon-ref-card">
+<div class="ca-icon-ref-svg"><svg class="ca-guide-icon-lg" viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg></div>
+<div class="ca-icon-ref-info"><strong>Anchor</strong><br><span>Represents saved anchors. Appears on the Anchors tab and the side panel trigger button.</span></div>
+</div>
+
+<div class="ca-icon-ref-card">
+<div class="ca-icon-ref-svg"><svg class="ca-guide-icon-lg" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+<div class="ca-icon-ref-info"><strong>Template</strong><br><span>Represents reusable anchor blueprints. Appears on the Templates tab.</span></div>
+</div>
+
+<div class="ca-icon-ref-card">
+<div class="ca-icon-ref-svg"><svg class="ca-guide-icon-lg" viewBox="0 0 24 24"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg></div>
+<div class="ca-icon-ref-info"><strong>Bundle</strong><br><span>Represents anchor groups for exclusive activation. Appears on the Bundles tab.</span></div>
+</div>
+
+<div class="ca-icon-ref-card">
+<div class="ca-icon-ref-svg"><svg class="ca-guide-icon-lg" viewBox="0 0 24 24"><path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/></svg></div>
+<div class="ca-icon-ref-info"><strong>Constraints</strong><br><span>Filter and constraint management. Appears on the Constraints tab.</span></div>
+</div>
+
+<div class="ca-icon-ref-card">
+<div class="ca-icon-ref-svg"><svg class="ca-guide-icon-lg" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+<div class="ca-icon-ref-info"><strong>Timeline</strong><br><span>Opens the anchor timeline overlay with usage heatmap.</span></div>
+</div>
+
+<div class="ca-icon-ref-card">
+<div class="ca-icon-ref-svg"><svg class="ca-guide-icon-lg" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+<div class="ca-icon-ref-info"><strong>Lock</strong><br><span>Pins the side panel open so it will not close when you click away.</span></div>
+</div>
+
+<div class="ca-icon-ref-card">
+<div class="ca-icon-ref-svg"><svg class="ca-guide-icon-lg" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 12l2 2 4-4"/></svg></div>
+<div class="ca-icon-ref-info"><strong>Bulk Select</strong><br><span>Enters bulk mode. Checkboxes appear on all items for batch operations.</span></div>
+</div>
+
+<div class="ca-icon-ref-card">
+<div class="ca-icon-ref-svg"><svg class="ca-guide-icon-lg" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></div>
+<div class="ca-icon-ref-info"><strong>Close</strong><br><span>Closes the panel, editor, timeline, or any open overlay.</span></div>
+</div>
+
+<div class="ca-icon-ref-card">
+<div class="ca-icon-ref-svg"><svg class="ca-guide-icon-lg" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></div>
+<div class="ca-icon-ref-info"><strong>Copy</strong><br><span>Copies anchor or template text to your clipboard.</span></div>
+</div>
+
+<div class="ca-icon-ref-card">
+<div class="ca-icon-ref-svg"><svg class="ca-guide-icon-lg" viewBox="0 0 24 24"><path d="M5 12h13M12 5l7 7-7 7"/></svg></div>
+<div class="ca-icon-ref-info"><strong>Inject</strong><br><span>Inserts anchor text directly into the Gemini prompt at your cursor.</span></div>
+</div>
+
+<div class="ca-icon-ref-card">
+<div class="ca-icon-ref-svg"><svg class="ca-guide-icon-lg" viewBox="0 0 24 24"><path d="M5 12h13M12 5l7 7-7 7"/><path d="M2 9l3-3M2 15l3 3"/></svg></div>
+<div class="ca-icon-ref-info"><strong>Inject All</strong><br><span>Injects all member anchor texts from a bundle joined by double newlines.</span></div>
+</div>
+
+<div class="ca-icon-ref-card">
+<div class="ca-icon-ref-svg"><svg class="ca-guide-icon-lg" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div>
+<div class="ca-icon-ref-info"><strong>Edit</strong><br><span>Opens the full-screen editor overlay for anchors, templates, or bundles.</span></div>
+</div>
+
+<div class="ca-icon-ref-card">
+<div class="ca-icon-ref-svg"><svg class="ca-guide-icon-lg" viewBox="0 0 24 24"><path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg></div>
+<div class="ca-icon-ref-info"><strong>Delete</strong><br><span>Moves an item to Trash. Soft-delete, recoverable within 7 days.</span></div>
+</div>
+
+<div class="ca-icon-ref-card">
+<div class="ca-icon-ref-svg"><svg class="ca-guide-icon-lg" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
+<div class="ca-icon-ref-info"><strong>Export</strong><br><span>Downloads an anchor, template, or bundle as a .json file.</span></div>
+</div>
+
+<div class="ca-icon-ref-card">
+<div class="ca-icon-ref-svg"><svg class="ca-guide-icon-lg" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 5 17 10"/><line x1="12" y1="5" x2="12" y2="15"/></svg></div>
+<div class="ca-icon-ref-info"><strong>Import</strong><br><span>Imports anchors, templates, or bundles from a .json file.</span></div>
+</div>
+
+<div class="ca-icon-ref-card">
+<div class="ca-icon-ref-svg"><svg class="ca-guide-icon-lg" viewBox="0 0 24 24"><rect x="1" y="5" width="22" height="14" rx="7"/><circle cx="8" cy="12" r="4"/></svg></div>
+<div class="ca-icon-ref-info"><strong>Toggle</strong><br><span>Switches an anchor on (green) or off (grey). Appears on anchor cards.</span></div>
+</div>
+
+<div class="ca-icon-ref-card">
+<div class="ca-icon-ref-svg"><svg class="ca-guide-icon-lg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div>
+<div class="ca-icon-ref-info"><strong>Add / New</strong><br><span>Creates a new template, bundle, or constraint. Appears in tab footers.</span></div>
+</div>
+
+<div class="ca-icon-ref-card">
+<div class="ca-icon-ref-svg"><svg class="ca-guide-icon-lg" viewBox="0 0 24 24"><path d="M6 2h12M6 22h12M6 6l6 6 6-6M6 18l6-6 6 6"/></svg></div>
+<div class="ca-icon-ref-info"><strong>TTL</strong><br><span>Idle expiry timer. Auto-disables an anchor if unused for a set number of hours.</span></div>
+</div>
+
+<div class="ca-icon-ref-card">
+<div class="ca-icon-ref-svg"><svg class="ca-guide-icon-lg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
+<div class="ca-icon-ref-info"><strong>Global</strong><br><span>Makes an anchor visible on all pages, not just where it was created.</span></div>
+</div>
+
+<div class="ca-icon-ref-card">
+<div class="ca-icon-ref-svg"><svg class="ca-guide-icon-lg" viewBox="0 0 24 24"><path d="M12 2L15 9l7 1-5 5.5L18 22l-6-3.5L6 22l1-6.5L2 10l7-1z"/></svg></div>
+<div class="ca-icon-ref-info"><strong>Pin</strong><br><span>Pins a constraint or keeps the minimap list open when your mouse moves away.</span></div>
+</div>
+
+<div class="ca-icon-ref-card">
+<div class="ca-icon-ref-svg"><span class="ca-guide-dot ca-guide-dot--green"></span><span class="ca-guide-dot ca-guide-dot--yellow"></span><span class="ca-guide-dot ca-guide-dot--red"></span></div>
+<div class="ca-icon-ref-info"><strong>Health</strong><br><span>Extension status indicator. Green = all good, yellow = degraded, red = Gemini UI changed.</span></div>
+</div>
+
+</div>
