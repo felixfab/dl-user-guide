@@ -67,7 +67,7 @@ The panel has three tabs: **Anchors** (your saved snippets), **Templates** (reus
 > <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg><span>Bundles</span></span>
 > </div>
 
-<img src="{{ '/assets/screenshots/section-3-side-panel.png' | relative_url }}" alt="Side Panel — full panel with header controls, tabs, and anchor list" style="max-width: 780px" loading="lazy">
+<img src="assets/screenshots/section-3-side-panel.png" alt="Side Panel — full panel with header controls, tabs, and anchor list" style="max-width: 780px" loading="lazy">
 
 ---
 
@@ -114,7 +114,7 @@ When creating an anchor from selected text, a popup appears where you can config
 
 The popup **remembers** your last used turns and TTL settings — they're pre-selected next time.
 
-<img src="{{ '/assets/screenshots/section-4-turn-popup.png' | relative_url }}" alt="Turn Popup — anchor creation with Turns, TTL, Description, Source URL fields" style="max-width: 780px" loading="lazy">
+<img src="assets/screenshots/section-4-turn-popup.png" alt="Turn Popup — anchor creation with Turns, TTL, Description, Source URL fields" style="max-width: 780px" loading="lazy">
 
 ### Managing Anchors
 
@@ -159,7 +159,7 @@ Click the **<svg class="ca-guide-icon" viewBox="0 0 24 24"><rect x="3" y="3" wid
 | **Delete** | Soft-deletes all selected (moves to Trash) |
 | **Export** | Exports selected anchors to `.json` |
 
-<img src="{{ '/assets/screenshots/section-4-bulk-mode.png' | relative_url }}" alt="Bulk Mode — anchor list with checkboxes and bulk action bar" style="max-width: 780px" loading="lazy">
+<img src="assets/screenshots/section-4-bulk-mode.png" alt="Bulk Mode — anchor list with checkboxes and bulk action bar" style="max-width: 780px" loading="lazy">
 
 ### Local vs Global
 
@@ -301,7 +301,7 @@ When a bundle is active, the side panel trigger icon shows a **2-letter abbrevia
 
 Click **Deactivate All** in the bundle footer to deactivate all bundles and clear the bundle badge. The badge then shows the active anchor count.
 
-<img src="{{ '/assets/screenshots/section-6-bundle-badge.png' | relative_url }}" alt="Bundle Badge — side panel trigger icon with abbreviation badge" style="max-width: 780px" loading="lazy">
+<img src="assets/screenshots/section-6-bundle-badge.png" alt="Bundle Badge — side panel trigger icon with abbreviation badge" style="max-width: 780px" loading="lazy">
 
 ### Bulk Bundle Operations
 
@@ -351,7 +351,7 @@ Clicking **Edit** on any anchor or template opens the full-screen editor overlay
 └────────────────────────────────────────────────┘
 ```
 
-<img src="{{ '/assets/screenshots/section-7-editor-overlay.png' | relative_url }}" alt="Editor Overlay — full-screen editor with textarea and sidebar controls" style="max-width: 780px" loading="lazy">
+<img src="assets/screenshots/section-7-editor-overlay.png" alt="Editor Overlay — full-screen editor with textarea and sidebar controls" style="max-width: 780px" loading="lazy">
 
 ### Anchor Switcher
 
@@ -410,7 +410,7 @@ The heatmap at the top shows your anchor activity over time. Each cell = one day
 | **Range** | 3 Months, 6 Months, All Time |
 | **Clear** | Clears the selected day filter |
 
-<img src="{{ '/assets/screenshots/section-8-timeline-overlay.png' | relative_url }}" alt="Timeline Overlay — heatmap grid with mode/color/range controls and anchor cards" style="max-width: 780px" loading="lazy">
+<img src="assets/screenshots/section-8-timeline-overlay.png" alt="Timeline Overlay — heatmap grid with mode/color/range controls and anchor cards" style="max-width: 780px" loading="lazy">
 
 ### Timeline Cards
 
@@ -494,7 +494,7 @@ While typing in the Gemini prompt, you can use slash commands to search and inje
 
 Type `/a` or `/p` followed by a space, then a few characters of the anchor text or tag. A dropdown appears with matching anchors. Use **↑↓** to navigate, **Enter** to insert. **Escape** dismisses. If no search term, shows your 10 most-used anchors.
 
-<img src="{{ '/assets/screenshots/section-10-slash-commands.png' | relative_url }}" alt="Slash Commands — dropdown in chat input showing matching anchors" style="max-width: 780px" loading="lazy">
+<img src="assets/screenshots/section-10-slash-commands.png" alt="Slash Commands — dropdown in chat input showing matching anchors" style="max-width: 780px" loading="lazy">
 
 ---
 
@@ -530,7 +530,7 @@ All deletes are **soft-deletes** — items move to Trash, not permanently delete
 
 ## 12. Keyboard Shortcuts
 
-<img src="{{ '/assets/screenshots/section-12-keyboard-shortcuts.png' | relative_url }}" alt="Keyboard Shortcuts — the built-in ? key reference overlay" style="max-width: 780px" loading="lazy">
+<img src="assets/screenshots/section-12-keyboard-shortcuts.png" alt="Keyboard Shortcuts — the built-in ? key reference overlay" style="max-width: 780px" loading="lazy">
 
 > <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 006 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg> **Tip:** You don't need to memorize these. Press **?** at any time to see the full reference on your screen.
 
