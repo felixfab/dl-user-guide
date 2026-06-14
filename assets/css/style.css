@@ -104,6 +104,8 @@ body {
 .layout {
   display: flex;
   min-height: 100vh;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 /* ---- Sidebar ---- */
@@ -567,9 +569,11 @@ svg.ca-guide-icon, svg.ca-guide-icon-lg,
 
 /* Align guide icons and dots inside prose tables */
 .prose table .ca-guide-icon,
-.prose table .ca-guide-icon-lg,
-.prose table .ca-guide-dot {
+.prose table .ca-guide-icon-lg {
   vertical-align: middle;
+}
+.prose table .ca-guide-dot {
+  vertical-align: -1px;
 }
 
 /* Screenshot placeholder styling */
