@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Screenshot Test Fixture</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, sans-serif; background: #1a1a2e; color: #e0e0e0; }
+
+/* Gemini chat container */
+#chat-history-container {
+  max-height: 600px;
+  overflow-y: auto;
+  padding: 16px;
+}
+
+/* Gemini message elements */
+user-query, model-response {
+  display: block;
+  padding: 12px 16px;
+  margin: 8px 0;
+  border-radius: 12px;
+  max-width: 85%;
+}
+user-query {
+  background: #2a2a4e;
+  margin-left: 8px;
+}
+model-response {
+  background: #1e1e3a;
+  margin-right: 8px;
+}
+
+/* Message content */
+.message-content p { margin: 6px 0; line-height: 1.5; }
+pre { background: #0d0d1a; padding: 12px; border-radius: 8px; overflow-x: auto; font-size: 13px; margin: 8px 0; }
+code { background: #2a2a4e; padding: 1px 5px; border-radius: 3px; font-size: 13px; }
+b { color: #a0a0ff; }
+
+/* Code highlighting */
+pre .keyword { color: #c792ea; }
+pre .string { color: #c3e88d; }
+pre .comment { color: #546e7a; font-style: italic; }
+
+/* Input area */
+.input-area {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  padding: 12px 16px;
+  background: #12122a;
+  border-top: 1px solid #2a2a4e;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.prompt-input {
+  flex: 1;
+  background: #2a2a4e;
+  border: 1px solid #3a3a6e;
+  border-radius: 24px;
+  padding: 12px 16px;
+  color: #e0e0e0;
+  font-size: 14px;
+  min-height: 44px;
+}
+.send-btn {
+  background: #4a4a8e;
+  border: none;
+  border-radius: 50%;
+  width: 44px; height: 44px;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Scrollable area */
+infinite-scroller {
+  display: block;
+  max-height: 600px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #3a3a6e transparent;
+}
+infinite-scroller::-webkit-scrollbar { width: 6px; }
+infinite-scroller::-webkit-scrollbar-thumb { background: #3a3a6e; border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<infinite-scroller id="chat-history-container" data-test-id="chat-history-container">
+
+  <user-query data-message-id="q1">
+    <div class="message-content">
+      <p>What is the best way to center a div in CSS?</p>
+    </div>
+  </user-query>
+
+<model-response data-message-id="r1">
+    <div class="message-content">
+      <p>The most reliable modern approach is flexbox: .parent { display: flex; justify-content: center; align-items: center; }</p>
+      <p>This works in all modern browsers and is the recommended approach for 2024.</p>
+    </div>
+  </model-response>
+
+  <user-query data-message-id="q2">
+    <div class="message-content">
+      <p>What about grid? I've heard that is better for two-dimensional layouts.</p>
+    </div>
+  </user-query>
+
+<model-response data-message-id="r2">
+    <div class="message-content">
+      <p>Grid is excellent for two-dimensional layouts: .parent { display: grid; place-items: center; }</p>
+      <p>Both are fully supported. Choose based on your overall layout needs.</p>
+    </div>
+  </model-response>
+
+<model-response data-message-id="r3">
+    <div class="message-content">
+      <p>Absolute positioning fallback for old browsers: .child { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }</p>
+      <p>But for production in 2024, flexbox or grid is strongly preferred.</p>
+    </div>
+  </model-response>
+
+</infinite-scroller>
+
+<div class="input-area">
+  <div class="prompt-input" contenteditable="true" role="textbox" data-test-id="chat-input"></div>
+  <button class="send-btn" aria-label="Send message" data-test-id="send-btn">&#9654;</button>
+</div>
+
+<script>
+/* ─── Mock chrome.* API ─────────────────────────────────────── */
+window.chrome = {
+  runtime: {
+    getURL: function(p) { return p; },
+    id: 'ca-test-extension'
+  },
+  storage: {
+    local: {
+      _data: {},
+      get: function(keys, cb) {
+        var result = {};
+        var k = typeof keys === 'string' ? [keys] : keys;
+        if (k && k !== null) {
+          k.forEach(function(key) {
+            if (key === null) return;
+            if (this._data && this._data[key] !== undefined) {
+              result[key] = this._data[key];
+            }
+          }, this);
+        }
+        if (cb) cb(result);
+        return result;
+      },
+      set: function(items, cb) {
+        Object.keys(items).forEach(function(k) {
+          this._data[k] = items[k];
+        }, this);
+        if (cb) cb();
+      },
+      remove: function(keys, cb) {
+        var k = typeof keys === 'string' ? [keys] : keys;
+        k.forEach(function(key) { delete this._data[key]; }, this);
+        if (cb) cb();
+      },
+      clear: function(cb) { this._data = {}; if (cb) cb(); }
+    },
+    onChanged: { addListener: function() {} }
+  }
+};
+
+/* ─── Fake XMLHttpRequest so shared.js can load CSS ────────────── */
+window.XMLHttpRequest = function() {};
+window.XMLHttpRequest.prototype.open = function() { this._sent = false; };
+window.XMLHttpRequest.prototype.send = function() {
+  this.responseText = '/* empty */';
+  this._sent = true;
+  if (typeof this.onload === 'function') this.onload();
+};
+window.XMLHttpRequest.prototype.abort = function() {};
+
+/* ─── Seed __ca state ────────────────────────────────────────── */
+window.__ca = window.__ca || {};
+window.__ca.state = {
+  analytics: {
+    sessionId: 'test-session-001',
+    prompts: 3,
+    turns: [
+      {
+        turn: 1,
+        inputTokens: 120,
+        outputTokens: 340,
+        promptText: 'What is the best way to center a div in CSS?',
+        responseText: 'The most reliable modern approach is flexbox...',
+        activeAnchors: ['center div', 'flexbox layout']
+      },
+      {
+        turn: 2,
+        inputTokens: 280,
+        outputTokens: 520,
+        promptText: 'What about grid?',
+        responseText: 'Grid is excellent for two-dimensional layouts...',
+        activeAnchors: ['grid layout']
+      },
+      {
+        turn: 3,
+        inputTokens: 410,
+        outputTokens: 680,
+        promptText: 'Any old browser support?',
+        responseText: 'For very old browsers, you can use absolute positioning...',
+        activeAnchors: ['center div', 'flexbox layout', 'grid layout']
+      }
+    ]
+  },
+  dashboard: { isOpen: false }
+};
+
+/* ─── Seed storage with mock anchors ─────────────────────────── */
+var mockAnchors = [
+  {
+    id: 'anchor_aaaa1111',
+    text: 'The most reliable modern approach is flexbox: .parent { display: flex; justify-content: center; align-items: center; }',
+    turnsRemaining: 7,
+    originalTurns: 10,
+    turnsTotal: 10,
+    toggle: true,
+    active: true,
+    isGlobal: false,
+    sourceUrl: 'https://gemini.google.com/chat/test1',
+    createdAt: Date.now() - 3600000,
+    tags: ['css', 'layout'],
+    triggerKeywords: ['flexbox', 'center'],
+    description: 'Flexbox centering pattern',
+    order: 1
+  },
+  {
+    id: 'anchor_bbbb2222',
+    text: 'Grid is excellent for two-dimensional layouts: .parent { display: grid; place-items: center; }',
+    turnsRemaining: 5,
+    originalTurns: 10,
+    turnsTotal: 10,
+    toggle: true,
+    active: true,
+    isGlobal: false,
+    sourceUrl: 'https://gemini.google.com/chat/test1',
+    createdAt: Date.now() - 1800000,
+    tags: ['css', 'layout'],
+    triggerKeywords: ['grid', 'two-dimensional'],
+    description: 'CSS Grid centering',
+    order: 2
+  },
+  {
+    id: 'anchor_cccc3333',
+    text: 'Absolute positioning fallback for old browsers: .child { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }',
+    turnsRemaining: 3,
+    originalTurns: 10,
+    turnsTotal: 10,
+    toggle: true,
+    active: true,
+    isGlobal: false,
+    sourceUrl: 'https://gemini.google.com/chat/test1',
+    createdAt: Date.now() - 900000,
+    tags: ['css', 'legacy'],
+    triggerKeywords: ['old browsers', 'position'],
+    description: 'Absolute centering fallback',
+    order: 3
+  },
+  {
+    id: 'anchor_dddd4444',
+    text: 'Flexbox and grid are the recommended approaches for 2024.',
+    turnsRemaining: 10,
+    originalTurns: 10,
+    turnsTotal: 10,
+    toggle: false,
+    active: true,
+    isGlobal: true,
+    sourceUrl: 'https://gemini.google.com/chat/test1',
+    createdAt: Date.now() - 7200000,
+    tags: ['css'],
+    triggerKeywords: [],
+    description: 'Summary recommendation',
+    order: 4
+  }
+];
+
+chrome.storage.local._data['__ca_anchors_cache'] = mockAnchors;
+chrome.storage.local._data['__ca_active_profile'] = JSON.stringify({
+  role_definition: 'You are a CSS expert.',
+  name: 'CSS Expert'
+});
+
+/* ─── Seed minimap matched anchors ──────────────────────────── */
+window.__ca._minimapBars = [
+  { msgIndex: 0, blockIndex: 0, isUser: true, text: 'What is the best way to center a div in CSS?', matchedAnchors: [] },
+  { msgIndex: 1, blockIndex: 0, isUser: false, text: 'The most reliable modern approach is flexbox...', matchedAnchors: ['anchor_aaaa1111'] },
+  { msgIndex: 2, blockIndex: 0, isUser: true, text: 'What about grid?', matchedAnchors: [] },
+  { msgIndex: 3, blockIndex: 0, isUser: false, text: 'Grid is excellent for two-dimensional layouts...', matchedAnchors: ['anchor_bbbb2222'] },
+  { msgIndex: 3, blockIndex: 1, isUser: false, text: 'Both are fully supported...', matchedAnchors: [] }
+];
+</script>
+
+<div id="ca-root" platform="gemini" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:2147483647;"></div>
+
+</body>
+</html>
