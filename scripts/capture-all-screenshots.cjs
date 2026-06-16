@@ -35,9 +35,9 @@ const MOCK_ANCHORS = [
   { id: 'anchor_dddd4444', text: 'Flexbox and grid are the recommended approaches for 2024.', turnsRemaining: 10, turnsTotal: 10, toggle: false, active: true, isGlobal: true, sourceUrl: 'https://gemini.google.com/chat/test1', createdAt: Date.now() - 7200000, tags: ['css'], triggerKeywords: [], description: 'Summary recommendation', originalTurns: 10, order: 4 }
 ];
 
-async function initPage(browser) {
+async function initPage(browser, options = {}) {
   const page = await browser.newPage();
-  await page.setViewport({ width: 1440, height: 900 });
+  await page.setViewport({ width: 1440, height: 900, deviceScaleFactor: options.scale || 1 });
 
   page.on('pageerror', err => {
     if (!err.message.includes('addListener')) log('PAGE ERROR:', err.message);
@@ -150,9 +150,9 @@ async function main() {
     await seedState(page);
     await openPanel(page);
     await sleep(500);
-    // Panel at left=1123, width=316, height=900
-    await page.screenshot({ path: path.join(OUT, 'section-3-side-panel.png'), clip: { x: 1123, y: 0, width: 317, height: 900 } });
-    log('Saved: section-3-side-panel.png (317x900)');
+    // Panel at left=1123, width=317, height=700 (reduced from 900)
+    await page.screenshot({ path: path.join(OUT, 'section-3-side-panel.png'), clip: { x: 1123, y: 0, width: 317, height: 700 } });
+    log('Saved: section-3-side-panel.png (317x700)');
     await page.close();
   }
 
@@ -181,9 +181,9 @@ async function main() {
     await sleep(500);
     await page.evaluate(function() { window.__ca.panel.toggleBulk(); });
     await sleep(500);
-    // Capture the panel in bulk mode
-    await page.screenshot({ path: path.join(OUT, 'section-4-bulk-mode.png'), clip: { x: 1123, y: 0, width: 317, height: 900 } });
-    log('Saved: section-4-bulk-mode.png (317x900)');
+    // Capture the panel in bulk mode (height reduced to 700)
+    await page.screenshot({ path: path.join(OUT, 'section-4-bulk-mode.png'), clip: { x: 1123, y: 0, width: 317, height: 700 } });
+    log('Saved: section-4-bulk-mode.png (317x700)');
     await page.close();
   }
 
@@ -193,8 +193,8 @@ async function main() {
     await loadModules(page);
     await seedState(page);
     await sleep(500);
-    // Capture the trigger zone which shows the bundle badge
-    await captureShadow(page, '.ca-trigger-zone', path.join(OUT, 'section-6-bundle-badge.png'), { minWidth: 50, minHeight: 50 });
+    // Capture the trigger zone which shows the bundle badge (2x scale for clarity)
+    await captureShadow(page, '.ca-trigger-zone', path.join(OUT, 'section-6-bundle-badge.png'), { minWidth: 100, minHeight: 100, padding: 20 });
     await page.close();
   }
 
