@@ -72,6 +72,7 @@ Below the tabs are the side panel's tool icons: Health dot shows extension statu
 > <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 8v8M8 12h8"/></svg><span>Minimize</span></span>
 > </div>
 
+<!-- SCREENSHOT: Section 3 — Side Panel (317x900) -->
 <img src="assets/screenshots/section-3-side-panel.png" alt="Side Panel — full panel with header controls, tabs, and anchor list" style="max-width: 780px" loading="lazy">
 
 ---
@@ -119,6 +120,7 @@ When creating an anchor from selected text, a popup appears where you can config
 
 The popup **remembers** your last used turns and TTL settings — they're pre-selected next time.
 
+<!-- SCREENSHOT: Section 4 — Turn Popup (400x459) -->
 <img src="assets/screenshots/section-4-turn-popup.png" alt="Turn Popup — anchor creation with Turns, TTL, Description, Source URL fields" style="max-width: 780px" loading="lazy">
 
 ### Managing Anchors
@@ -164,6 +166,7 @@ Click the **<svg class="ca-guide-icon" viewBox="0 0 24 24"><rect x="3" y="3" wid
 | **Delete** | Soft-deletes all selected (moves to Trash) |
 | **Export** | Exports selected anchors to `.json` |
 
+<!-- SCREENSHOT: Section 4 — Bulk Mode (317x900) -->
 <img src="assets/screenshots/section-4-bulk-mode.png" alt="Bulk Mode — anchor list with checkboxes and bulk action bar" style="max-width: 780px" loading="lazy">
 
 ### Local vs Global
@@ -306,6 +309,7 @@ When a bundle is active, the side panel trigger icon shows a **2-letter abbrevia
 
 Click **Deactivate All** in the bundle footer to deactivate all bundles and clear the bundle badge. The badge then shows the active anchor count.
 
+<!-- SCREENSHOT: Section 6 — Bundle Badge (50x120) -->
 <img src="assets/screenshots/section-6-bundle-badge.png" alt="Bundle Badge — side panel trigger icon with abbreviation badge" style="max-width: 780px" loading="lazy">
 
 ### Bulk Bundle Operations
@@ -382,6 +386,7 @@ When a constraint is active, it works alongside other settings:
 
 Clicking **Edit** on any anchor or template opens the full-screen editor overlay. The layout has a text area on the left and a sidebar on the right with controls for tags, trigger keywords, turns, status, scope, TTL, usage stats, source URL, and metadata. A footer row holds the action buttons.
 
+<!-- SCREENSHOT: Section 8 — Editor Overlay (1440x900) -->
 <img src="assets/screenshots/section-8-editor-overlay.png" alt="Editor Overlay — full-screen editor with textarea and sidebar controls" style="max-width: 780px" loading="lazy">
 
 ### Anchor Switcher
@@ -441,6 +446,7 @@ The heatmap at the top shows your anchor activity over time. Each cell = one day
 | **Range** | 3 Months, 6 Months, All Time |
 | **Clear** | Clears the selected day filter |
 
+<!-- SCREENSHOT: Section 8 — Timeline Overlay (1440x900) -->
 <img src="assets/screenshots/section-8-timeline-overlay.png" alt="Timeline Overlay — heatmap grid with mode/color/range controls and anchor cards" style="max-width: 780px" loading="lazy">
 
 ### Timeline Cards
@@ -525,6 +531,7 @@ While typing in the Gemini prompt, you can use slash commands to search and inje
 
 Type `/a` or `/p` followed by a space, then a few characters of the anchor text or tag. A dropdown appears with matching anchors. Use **↑↓** to navigate, **Enter** to insert. **Escape** dismisses. If no search term, shows your 10 most-used anchors.
 
+<!-- SCREENSHOT: Section 10 — Slash Commands (320x200) -->
 <img src="assets/screenshots/section-10-slash-commands.png" alt="Slash Commands — dropdown in chat input showing matching anchors" style="max-width: 780px" loading="lazy">
 
 ---
