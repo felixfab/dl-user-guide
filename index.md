@@ -104,7 +104,7 @@ There are four ways to create an anchor:
 **D. Bulk import**
 
 1. Click **Import** in the anchors tab footer
-2. Select a `.json` file (see Section 13 for format)
+2. Select a `.json` file (see Section 14 for format)
 
 ### The Turn Popup
 
@@ -142,7 +142,7 @@ Each anchor card shows:
 | <svg class="ca-guide-icon" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> **Copy** | Copies anchor text to clipboard |
 | <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M5 12h13M12 5l7 7-7 7"/></svg> **Inject** | Injects anchor text directly into the Gemini prompt at cursor |
 | <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> **Export** | Downloads anchor as a `.json` file |
-| <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> **Edit** | Opens the full editor overlay (see Section 8) |
+| <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> **Edit** | Opens the full editor overlay (see Section 9) |
 | <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg> **Delete** | Moves anchor to Trash (soft-delete — recoverable) |
 
 ### Search, Sort &amp; Filter {#search-sort-filter}
@@ -563,9 +563,56 @@ Click the **lock icon** to keep the list open when your mouse moves away. Click 
 > <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 8v8M8 12h8"/></svg><span>Toggle Minimap</span></span>
 > </div>
 
+## 13. The Dashboard
+
+The analytics dashboard gives you a live overview of your current session — how many turns you have had, how much memory (anchors) you have left, and the token cost of your conversation so far.
+
+Press **Alt + Shift + D** to open it from anywhere on the Gemini page. Press **Escape** or click outside the panel to close it.
+
+### The four stat cards
+
+**Active Turns** — How many times you have exchanged messages with Gemini this session. Starts at 0 and increases each time you send a message.
+
+**Anchor Health** — A score from 0–100% based on how many turns your anchors have left. Above 60% means your anchors are in good shape. Below 30% means they are running low. The hint text below the number tells you when to consider refreshing them.
+
+**Input Tokens** — An estimate of how many tokens you have sent to Gemini in total. (Tokens are how the AI divides up text — think of them as chunks of roughly 4 characters each. Code text is counted at higher density, roughly 2.5 characters per token.)
+
+**Output Tokens** — An estimate of how many tokens Gemini has sent back. (Same counting method as Input Tokens.)
+
+### Pinned Topics table
+
+Every anchor you currently have active appears here. Click **Refresh** on any row to restore that anchor's turns to the original count — no need to open the editor.
+
+| Column | What it shows |
+|--------|---------------|
+| **Anchor ID** | A short label for the anchor (e.g. TX-1a2b3c4d) |
+| **Keyword** | The first four words of the anchor's text |
+| **Turns** | Turns remaining / original turns (e.g. 7/10) |
+| **TTL** | Time-to-live remaining as a percentage |
+| **Status** | Green = Active · Yellow = Idle · Red = Expired |
+| **Refresh** | Resets that anchor's turns back to full |
+
+### Last Input / AI Response Output
+
+Two cards side by side showing the most recent message exchange:
+
+- **Last Input** — Your message from the previous round, the turn number, and the token estimate. Any anchors that fired are listed at the bottom.
+- **AI Response Output** — Gemini's reply to that message, with a token breakdown (tokens in / tokens out).
+
+Text in these cards is cut off at around 200 characters to keep them readable. Only the most recent exchange is shown.
+
+### Empty state
+
+If you have no active anchors yet, the table area shows: "No active anchors. Create one with **Alt + A**." The stat cards show zero turns and 100% health until you create your first anchor.
+
+The dashboard data comes from the current session only. Starting a new Gemini conversation resets it.
+
 ---
 
-## 13. Data Management
+
+---
+
+## 14. Data Management
 
 ### Export All
 
@@ -595,126 +642,132 @@ All deletes are **soft-deletes** — items move to Trash, not permanently delete
 
 ---
 
-## 14. Keyboard Shortcuts
+## 15. Keyboard Shortcuts ⌨️
 
-<img src="assets/screenshots/section-12-keyboard-shortcuts.png" alt="Keyboard Shortcuts — the built-in ? key reference overlay" style="max-width: 780px" loading="lazy">
+### See all shortcuts on screen at once
+**?** — Press this any time to open the full shortcut reference overlay inside the extension.
+No need to memorize anything.
 
-> <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 006 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg> **Tip:** You don't need to memorize these. Press **?** at any time to see the full reference on your screen.
+### Before you press any shortcut
+**Shortcuts do not work while you are typing in a text field.** Click any blank area of the Gemini page first, then press a shortcut.
 
-### Save and manage your notes
+On Mac, the Alt key is the Option key.
 
-| To do this… | Press this | What to expect |
-|---|---|---|
-| Save text you just copied | **Alt + A** | A short confirmation message appears. |
-| Turn bulk mode on or off | **Alt + B** | Checkboxes appear on every item. |
-| See your usage history | **Alt + T** | A timeline overlay opens. |
+### Create and save anchors
 
-### Open and move around
+**Alt + A** — Create an anchor from your clipboard
+→ Copy text you want to reuse (Ctrl+C), then press Alt+A. The anchor is saved immediately with your last-used settings.
 
-> <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 006 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg> **Shortcuts do not respond while you're typing in a text field.** This prevents them from interfering with your writing. Click a blank area of the page first, then try the shortcut again.
+**Alt + B** — Turn bulk mode on or off
+→ Checkboxes appear on every anchor. Select several at once to move, delete, or toggle them together.
 
-| To do this… | Press this | What to expect |
-|---|---|---|
-| Open or close the side panel | **Alt + O** | The panel opens. The search box is ready to type in. |
-| Switch to the Anchors tab | **Alt + 1** | |
-| Switch to the Templates tab | **Alt + 2** | |
-| Switch to the Bundles tab | **Alt + 3** | |
-| Switch to the Constraints tab | **Alt + 4** | |
-| Open the behavior editor | **Alt + E** | |
-| Show or hide the minimap | **Alt + M** | Works even while you're typing. |
-| Jump to the search box | **/** | Start typing immediately. |
-| Close any open window | **Escape** | Closes the panel, editor, dropdown, or popup. |
-| Show this reference on screen | **?** | |
+### Open and close panels
 
-### Type commands in your message
+**Alt + O** — Open or close the side panel
+→ The side panel is where you view and manage all your saved anchors.
 
-Search your saved notes from inside the Gemini chat box — no need to open the side panel.
+**Alt + T** — Open the timeline
+→ See your anchor history shown as a heatmap, grouped by date.
+
+**Alt + Shift + D** — Open the analytics dashboard
+→ View a live summary of this session: token counts, anchor health, and your last exchange with Gemini.
+
+### Navigate the side panel
+
+**Alt + 1** — Switch to the Anchors tab
+**Alt + 2** — Switch to the Templates tab
+**Alt + 3** — Switch to the Bundles tab
+**Alt + 4** — Switch to the Constraints tab
+
+**/** — Jump to the search box
+→ Start typing immediately to filter your anchors by keyword.
+
+**Alt + E** — Open the behavior editor
+→ Fine-tune how your anchors behave when they are injected into prompts.
+
+**Alt + M** — Show or hide the minimap
+→ Works even while you are typing.
+
+**Escape** — Close the panel or dismiss any open dialog
+→ If multiple things are open, press Escape repeatedly to close them one by one.
+
+### Use slash commands from inside your message
+
+Slash commands let you search and insert an anchor without opening the side panel.
 
 **Before you start:** Click into the Gemini chat box where you type your message.
 
-| Command | What it does |
-|---|---|
-| **/a keyword** | Inserts the note's text at your cursor. |
-| **/p keyword** | Inserts the note's text at the beginning of your message. |
-
-**How to use a slash command:**
-
-1. Type **/a** or **/p** followed by a **space**.
-2. A dropdown appears showing notes that match what you typed.
-   - Type nothing after the space and it shows your 10 most-used notes.
-3. Press **↓** or **↑** to move through the list.
-4. Press **Enter** to select the highlighted note.
-   - Its text appears in your message automatically.
+1. Type **/a** (to append after your message) or **/p** (to prepend before your message), followed by a space.
+2. A dropdown appears showing matching anchors.
+   — Type nothing after the space to see your 10 most-used anchors.
+3. Press **↑** or **↓** to move through the list.
+4. Press **Enter** to insert the highlighted anchor.
 5. Press **Escape** to close the dropdown without inserting anything.
 
 ### Navigate the minimap anchor list
 
-The minimap has a grouped list of all your notes in the current chat.
+The minimap is a thin bar on the right edge of the page. It shows your conversation structure at a glance.
 
-**To open the list:**
+**To open the anchor list:**
 1. Hover over the minimap.
 2. Click the **#** button that appears.
-3. The list stays open and centered on your screen.
+3. The list opens and stays centered on your screen.
 
-| Key | What it does |
+| Press | To |
 |---|---|
-| **↓** or **↑** | Move down or up one item. |
-| **Enter** | Scrolls to that note's location on the page. |
-| **Escape** | Closes the list. |
+| **↑** or **↓** | Move up or down one item in the list |
+| **Enter** | Scroll the page to that anchor's location |
+| **Escape** | Close the list |
 
-> <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 006 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg> Click the **lock icon** to keep the list open even when your mouse moves away. Click the **×** button to close it manually.
+> 💡 Click the **lock icon** to keep the list open when your mouse moves away. Click **×** to close it manually.
 
-### Add tags faster
+### Work with tags
 
-When typing tags on a note or template, type **#** to see suggestions based on tags you have used before.
+When you are adding a tag to an anchor or template, type **#** to see suggestions based on tags you have used before.
 
-| Key | What it does |
+| Press | To |
 |---|---|
-| **↓** or **↑** | Move through the suggestion list. |
-| **Enter** | Adds the highlighted suggestion as a tag. |
-| **Escape** | Hides the suggestion list. |
-
-### Use your mouse
-
-| Action | How to do it |
-|---|---|
-| Save text as a note | Highlight any text, then **right-click** → **Create Anchor**. The editor opens ready to fill in. |
-| Reorder your notes | Click and hold a note in the side panel. Drag it up or down. |
+| **↑** or **↓** | Move through the suggestion list |
+| **Enter** | Add the highlighted suggestion as a tag |
+| **Escape** | Close the suggestion list |
 
 ### Work in editors and dialogs
 
-These shortcuts work while an editor or a dialog window is open.
-
-| Key | What it does |
+| Press | To |
 |---|---|
-| **Escape** | Closes the current editor. Your changes save automatically. |
-| **Escape** | Dismisses a confirmation dialog (such as deleting an item). |
-| **Escape** | Closes the timeline overlay. |
-| **Enter** | Adds the tag you typed (in a tag input field). |
-| **Enter** | Confirms an action (in a dialog). |
-| **Tab** | Moves forward through buttons and fields. |
-| **Shift + Tab** | Moves backward through buttons and fields. |
+| **Tab** | Move forward through buttons and fields |
+| **Shift + Tab** | Move backward through buttons and fields |
+| **Enter** | Confirm an action or add a tag |
+| **Escape** | Close the editor. Your changes save automatically. |
 
-> <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 006 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg> **Tip:** If you press Escape and nothing happens, a different dialog may be open underneath. Press Escape again or click outside the dialog.
+> ⚠️ If Escape does not work, another dialog may be open beneath it. Press Escape again to close the layer underneath.
 
-### Change your shortcuts
+### Add anchors with your mouse
 
-You can change four shortcuts to keys that feel more natural to you:
-**Alt + A**, **Alt + O**, **Alt + T**, and **Alt + B**.
+| Do this | How |
+|---|---|
+| Save selected text | Highlight any text, then right-click → **Create Anchor** |
+| Reorder anchors | Click and hold an anchor card in the side panel, then drag it up or down |
 
-**Before you start:** Open a new browser tab.
+### Customize four shortcuts
 
-1. Type `chrome://extensions/shortcuts` into your browser's address bar. Press **Enter**.
-2. Find **Contextual Anchor** in the list.
-3. Click the **pencil icon** (<svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>) next to the shortcut you want to change.
-4. Press the new key combination you want to use.
-5. The change takes effect right away. No restart needed.
+You can reassign these four shortcuts to keys that feel more natural to you:
 
-> <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> **The Everyday shortcuts (/, ?, Alt + 1–4, Alt + E, and Alt + M) cannot be changed.** They are fixed.
+**Alt + A** · **Alt + O** · **Alt + T** · **Alt + B**
+
+1. Open a new browser tab.
+2. Type `chrome://extensions/shortcuts` in the address bar. Press Enter.
+3. Find **Contextual Anchor** in the list.
+4. Click the pencil icon next to the shortcut you want to change.
+5. Press your new key combination.
+6. The change takes effect immediately — no restart needed.
+
+> ⚠️ These shortcuts are fixed and cannot be changed: **?** · **/** · **Alt + 1–4** · **Alt + E** · **Alt + M** · **Alt + Shift + D**
+
 
 ---
 
-## 15. Troubleshooting
+## 16. Troubleshooting
 
 > <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 006 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg> **Start here:** Two things fix most problems. (1) Make sure you are on **gemini.google.com**. (2) **Reload** the page.
 
@@ -744,7 +797,7 @@ You can change four shortcuts to keys that feel more natural to you:
 
 ---
 
-## 16. Icon Reference {#icon-reference}
+## 17. Icon Reference {#icon-reference}
 
 This table lists every icon used in the extension. Use it as a quick lookup when the guide mentions an icon by name.
 
