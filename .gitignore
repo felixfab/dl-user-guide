@@ -3,3 +3,6 @@ _site/
 Gemfile.lock
 vendor/
 .bundle/
+node_modules/
+package.json
+package-lock.json
