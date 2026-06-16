@@ -187,13 +187,26 @@ async function main() {
     await page.close();
   }
 
-  log('=== 4. Bundle Badge (trigger zone) ===');
+  log('=== 4. Bundle Badge (trigger zone with active bundle) ===');
   {
     const page = await initPage(browser);
     await loadModules(page);
     await seedState(page);
     await sleep(500);
-    // Capture the trigger zone which shows the bundle badge (2x scale for clarity)
+    // Create a bundle and activate it to show the abbreviation badge
+    await page.evaluate(function() {
+      // Create a bundle named "CSS Layout" with anchor IDs
+      const anchor = window.__ca.storage.getAll()[0];
+      const bundle = window.__ca.storage.createBundle('CSS Layout', [anchor.id], 'css');
+      // Activate it to show the abbreviation badge
+      window.__ca.storage.activateBundleExclusively(bundle.id);
+      // Force update the badge display
+      if (window.__ca.panel && window.__ca.panel.updateBadge) {
+        window.__ca.panel.updateBadge();
+      }
+    });
+    await sleep(500);
+    // Capture the trigger zone which shows the bundle abbreviation badge (e.g., "CS")
     await captureShadow(page, '.ca-trigger-zone', path.join(OUT, 'section-6-bundle-badge.png'), { minWidth: 100, minHeight: 100, padding: 20 });
     await page.close();
   }
