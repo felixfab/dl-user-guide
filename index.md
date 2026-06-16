@@ -563,6 +563,9 @@ Click the **lock icon** to keep the list open when your mouse moves away. Click 
 > <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 8v8M8 12h8"/></svg><span>Toggle Minimap</span></span>
 > </div>
 
+<!-- SCREENSHOT: Section 12 — Minimap Anchor List (360x244) -->
+<img src="assets/screenshots/section-12-minimap-anchor-list.png" alt="Minimap Anchor List — grouped anchor popup showing all 4 anchors in chat with tag grouping" style="max-width: 780px" loading="lazy">
+
 ## 13. The Dashboard
 
 The analytics dashboard gives you a live overview of your current session — how many turns you have had, how much memory (anchors) you have left, and the token cost of your conversation so far.
@@ -578,6 +581,9 @@ Press **Alt + Shift + D** to open it from anywhere on the Gemini page. Press **E
 **Input Tokens** — An estimate of how many tokens you have sent to Gemini in total. (Tokens are how the AI divides up text — think of them as chunks of roughly 4 characters each. Code text is counted at higher density, roughly 2.5 characters per token.)
 
 **Output Tokens** — An estimate of how many tokens Gemini has sent back. (Same counting method as Input Tokens.)
+
+<!-- SCREENSHOT: Section 13 — Dashboard Populated (1440x900) -->
+<img src="assets/screenshots/section-13-dashboard-populated.png" alt="Dashboard Populated — analytics dashboard showing 3 active turns, 63% anchor health, token counts, and 4 pinned anchors with status" style="max-width: 780px" loading="lazy">
 
 ### Pinned Topics table
 
@@ -604,6 +610,9 @@ Text in these cards is cut off at around 200 characters to keep them readable. O
 ### Empty state
 
 If you have no active anchors yet, the table area shows: "No active anchors. Create one with **Alt + A**." The stat cards show zero turns and 100% health until you create your first anchor.
+
+<!-- SCREENSHOT: Section 13 — Dashboard Empty (1440x900) -->
+<img src="assets/screenshots/section-13-dashboard-empty.png" alt="Dashboard Empty — analytics dashboard showing zero turns, 100% health, and empty state message" style="max-width: 780px" loading="lazy">
 
 The dashboard data comes from the current session only. Starting a new Gemini conversation resets it.
 
