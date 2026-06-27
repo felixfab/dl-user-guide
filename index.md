@@ -538,40 +538,13 @@ Type `/a` or `/p` followed by a space, then a few characters of the anchor text 
 
 ## 12. The Minimap {#the-minimap}
 
-The minimap is a thin vertical bar on the right edge of the page that gives you a visual overview of the chat. It shows colored bars for each section of the conversation — user messages appear in one color, model responses in another. Code blocks get a distinct style so you can spot them at a glance.
+The minimap has been extracted into its own standalone extension with a dedicated user guide. See the **[CA Minimap User Guide](https://felixfab.github.io/dl-minimap-guide/)** for detailed documentation on installation, features, and troubleshooting.
 
-### What the minimap shows you
+The minimap is a thin vertical bar on the right edge of the page that gives you a visual overview of your Gemini chat. It works independently from Contextual Anchor but integrates seamlessly when both extensions are installed.
 
-- **Conversation structure** — Each bar represents a chunk of the chat. Hover over any bar to see a floating preview of that section's text
-- **Your saved anchors** — Bars that have anchors attached glow with a highlight. Click the bar to jump to that anchor
-- **Anchor count badge** — Click the **#** button on the minimap to see a complete list of all your anchors in the current chat, grouped by message
-- **Navigating by anchor** — In the anchor list, use **↓** and **↑** to move through items, and **Enter** to scroll the page to that anchor's location
-
-### Showing and hiding the minimap {#showing-and-hiding-the-minimap}
-
-Press **Alt+M** to show or hide the minimap at any time — this works even while you're typing. You can also change this shortcut at `chrome://extensions/shortcuts`.
-
-### The anchor list {#the-anchor-list-popup}
-
-The anchor popup appears when you click the **#** button on the minimap:
-
-| Key | What it does |
-|---|---|
-| **↓** or **↑** | Move through the list |
-| **Enter** | Scroll to the highlighted note |
-| **Escape** | Close the list |
-
-Click the **lock icon** to keep the list open when your mouse moves away. Click the **×** button to close it manually.
-
-> <div class="ca-guide-icon-block">
-> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 12l2 2 4-4"/></svg><span>Anchor List</span></span>
-> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg><span>Lock List</span></span>
-> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg><span>Close List</span></span>
-> <span class="ca-guide-icon-block-item"><svg class="ca-guide-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 8v8M8 12h8"/></svg><span>Toggle Minimap</span></span>
-> </div>
-
-<!-- SCREENSHOT: Section 12 — Minimap Anchor List (360x244) -->
-<img src="assets/screenshots/section-12-minimap-anchor-list.png" alt="Minimap Anchor List — grouped anchor popup showing all 4 anchors in chat with tag grouping" style="max-width: 780px" loading="lazy">
+**Quick links:**
+- [CA Minimap User Guide](https://felixfab.github.io/dl-minimap-guide/)
+- Keyboard shortcut: **Alt+M** to toggle the minimap
 
 ## 13. The Dashboard
 
@@ -722,20 +695,15 @@ Slash commands let you search and insert an anchor without opening the side pane
 
 ### Navigate the minimap anchor list
 
-The minimap is a thin bar on the right edge of the page. It shows your conversation structure at a glance.
+The minimap has its own dedicated [user guide](https://felixfab.github.io/dl-minimap-guide/) with full documentation. The minimap is a thin bar on the right edge of the page that shows your conversation structure at a glance. Press **Alt+M** to toggle it.
 
-**To open the anchor list:**
-1. Hover over the minimap.
-2. Click the **#** button that appears.
-3. The list opens and stays centered on your screen.
+**Quick reference:**
+- **Hover** over the minimap to see a preview of each section
+- Click the **#** button to open the anchor list
+- **↑** / **↓** to navigate, **Enter** to jump, **Escape** to close
+- Click the **lock icon** to keep the list open
 
-| Press | To |
-|---|---|
-| **↑** or **↓** | Move up or down one item in the list |
-| **Enter** | Scroll the page to that anchor's location |
-| **Escape** | Close the list |
-
-> 💡 Click the **lock icon** to keep the list open when your mouse moves away. Click **×** to close it manually.
+> For complete details, see the [CA Minimap User Guide](https://felixfab.github.io/dl-minimap-guide/).
 
 ### Work with tags
 
@@ -803,7 +771,7 @@ You can reassign these four shortcuts to keys that feel more natural to you:
 | The extension icon is missing | • Are you on **gemini.google.com**? (Subdomains like app.gemini.google.com will not work) • Is the extension **enabled** in your browser? | Go to gemini.google.com. Open `chrome://extensions` and check that Contextual Anchor is enabled. Then reload the page. |
 | Shortcuts are not responding | • Are you **typing in a text field**? Shortcuts pause while you type. • Is **another extension** using the same key combination? | Click a blank area of the page, then try the shortcut again. To check for conflicts, go to `chrome://extensions/shortcuts`. |
 | Slash commands do not work | • Is your cursor inside the Gemini chat box? • Did you type a **space** after **/a** or **/p**? | Click into the chat box. Make sure there is a space after the command. |
-| A window will not close | • Have you pressed **Escape** more than once? Escape closes the most recent window first. • Is the **minimap list pinned**? (A blue lock icon means it is pinned open) | Press Escape again to close the next layer. Click the lock icon or the **×** button to unpin the minimap list. |
+| A window will not close | • Have you pressed **Escape** more than once? Escape closes the most recent window first. | Press Escape again. If using the minimap, see the [CA Minimap Guide](https://felixfab.github.io/dl-minimap-guide/) for list behavior. |
 | Your note stopped appearing even though it has uses left | • Did its **time limit** (TTL) run out? • Did you accidentally **switch bundles**? | Open the note's editor to check the timer. Look at the Bundles tab to see which bundle is active. |
 
 > <svg class="ca-guide-icon" viewBox="0 0 24 24"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 006 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg> **Before you uninstall:** Export your data first. Click the **Export** button at the bottom of the Anchors tab to save everything as a `.json` file. You can import it back if you reinstall.
